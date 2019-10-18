@@ -2,6 +2,31 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		.input_box{
+			width: 90%;
+			height:18px;
+			color: #000000;
+			background-color: #00000000;
+			font-size: 12px;
+			margin-left:10px;
+			border: 1px solid #00000000;
+			border-bottom: 2px solid #c1c1c1;
+			padding-bottom: 10px;
+			margin-top:20px;
+			float:left;
+
+		}
+		.c
+		{
+			margin-top:20px;
+			margin-bottom:20px;
+			margin-right:20px;
+			margin-left:20px;
+			width:100px;
+			height:30px;
+		}
+	</style>
 </head>
 	<body style="background-image: linear-gradient(to right,#092554,#346cc8);">
 		<div id="login_page" style="width: 85%;margin-top: 80px;margin-left: 100px;box-shadow: 10px;">
@@ -20,7 +45,8 @@
 			<div id="login_div" style="float: right;width: 28%;height: 570px; background-color: #ffffff;margin-left: -10px; box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 				<img src="imageicon.png" style="float: right;height: 60px;width: 70px;">
 				<br>
-				<div style="position: absolute;top: 50%;transform: translateY(-50%);background-color: #ffffff;">
+				<!-- // -->
+				<div id="login_div_block" style="position: absolute;top: 50%;transform: translateY(-50%);background-color: #ffffff;display: none;">
 					<p style="color: #33b0ef;font-size: 15px;margin-left: 20px;margin-top: 50px;">LOGIN</p>
 					<div style="border-bottom: 2px solid #c1c1c1;width: 120%;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-left: 40px;margin-top: 30px;">
 						<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
@@ -32,6 +58,79 @@
 						<input type="text" name="PASSWORD"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="PASSWORD"; >
 					</div>
 					<p style="margin-left: 40px;margin-top: 50px; width: 120%; border-radius: 18px; height: 25px;font-size: 13px;background-color: #27aaf0;color: #bce6f9;padding-top: 12px;text-align: center;"><strong>LOGIN</strong></p>
+				</div>
+
+				<!-- // -->
+				<div style="height: 75%;width: 96%;background-color: #ffffff;margin-top: 60px;margin-left: 5px;margin-right: 5px;">
+					<!-- <div style="border: 2px solid green;margin: 10px;height: 40px;width: 98%;">
+						<div style="float: left;border:2px solid blue;height: 100%;width: "></div>
+					</div> -->
+					<center>
+						<p>
+					<textarea id="person_register" readonly="true" style="width: 47%;height: 30px;background-color: #00000000;color: #000000;float: left;resize: none;text-align: center;border: 2px solid #00000000;">PERSON</textarea>
+					<textarea id="organisation_register" readonly="true" style="width: 47%;height: 21px;margin-left: 2px;margin-right: -4px;background-color: #ffffff;color: #092554;float: right;border-left: 2px solid #092554;border-right: 2px solid #092554;border-top: 2px solid #092554;border-bottom: 2px solid #00000000;resize: none;text-align: center;padding-top: 10px;">ORGANISATION</textarea>
+					</p>
+					</center><br>
+					<div style="width: 100%;height: 100%;border: 2px solid #092554;margin-top: 16px;">
+						<div style="width: 100%; height:100%;border: 1px solid #00000000;">
+							<center>
+							<form style="border: 1px solid #00000000;" name="RegForm" action="submit.php" method="post" onsubmit="return form_Validate()">
+							<fieldset style="border: 1px solid #00000000;">	
+							<input class="input_box" type="text" placeholder="NAME" name="Name" id="textboxid" autofocus><br>
+							<input type="number" class="input_box" placeholder="AGE" name="Age" id="textboxid"><br><br><br><br><br><br>
+							<span style="margin-top: 0px;margin-left: -258px;">SEX:</span><br>
+							    <input type="radio" value="MALE" name="MALE" style="margin-left:-120px;margin-top: 10px;">MALE<br>
+							    <input type="radio" value="FEMALE" name="FEMALE" style="margin-left:-103px;margin-top: 10px;">FEMALE<br> 
+							    <input type="radio" value="OTHER" name="OTHER" style="margin-left:-112px;margin-top: 10px;">OTHER<br>
+							<select placeholder="PROFESSION" class="input_box" name="Profession" style="height: 27px;">
+							<option > PROFESSION </option>	
+							<option value="Government" id="textboxid">Government Employee </option>
+							<option value="Private">Private Employee </option>
+							<option value="Bussiness">Bussiness </option>
+							<option value="Other"> Other </option>
+							</select><br>
+							<select placeholder="STATE" class="input_box" name="State">
+							<option > SELECT STATE </option>	
+							<option value="Andhra Pradesh" id="textboxid">Andhra Pradesh </option>
+							<option value="Arunachal Pradesh">Arunachal Pradesh </option>
+							<option value="Assam"> Assam </option>
+							<option value="Bihar"> Bihar </option>
+							<option value="Chhsttisgarh"> Chhattisgarh </option>
+							<option value="Goa"> Goa </option>
+							<option value="Gujarat"> Gujarat </option>
+							<option value="Haryana"> Haryana </option>
+							<option value="Himachal Pradesh"> Himachal Pradesh </option>
+							<option value="Jammu and Kashmir "> Jammu and Kashmir </option>
+							<option value="Jharkhand"> Jharkhand </option>
+							<option value="Karnataka"> Karnataka </option>
+							<option value="Kerala"> Kerala </option>
+							<option value="Madhya Pradesh"> Madhya Pradesh </option>
+							<option value="Manipur"> Manipur </option>
+							<option value="Meghalaya"> Meghalaya </option> 
+							<option value="Mizoram"> Mizoram </option>
+							<option value="Nagaland"> Nagaland </option>
+							<option value="Orissa"> Orissa </option>
+							<option value="Punjab"> Punjab </option>
+							<option value="Rajasthan"> Rajasthan </option>
+							<option value="Sikkim"> Sikkim </option>
+							<option value="Tamil Nadu"> Tamil Nadu </option>
+							<option value="Telangana"> Telangana </option>
+							<option value="Tripura"> Tripura </option>
+							<option value="Uttranchal"> Uttranchal </option>
+							<option value="Uttar Pradesh"> Uttar Pradesh </option>
+							<option value="West Bengal"> West Bengal </option>
+							</select> <br>
+							<input class="input_box" type="text" placeholder="CITY" id="textboxids" name="CITY"><br>
+							<input class="input_box" type="password" placeholder="PASSWORD"id="textboxids" name="Password"><br>
+							<input class="input_box" type="password" placeholder="CONFIRM PASSWORD" id="textboxids" name="ConfirmPassword"><br>
+							<input type="submit" value="SUBMIT" name="submit" class="c">
+							<input type="reset" value="RESET" name="reset" class="c">
+							</fieldset>
+							</form>
+							</center>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>

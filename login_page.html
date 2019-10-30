@@ -8,7 +8,7 @@
 			height:18px;
 			color: #000000;
 			background-color: #00000000;
-			font-size: 12px;
+			font-size: 15px;
 			margin-left:10px;
 			border: 1px solid #00000000;
 			border-bottom: 2px solid #c1c1c1;
@@ -25,7 +25,44 @@
 			margin-left:20px;
 			width:100px;
 			height:30px;
+			background-color: #27aaf0;
+			color: #bce6f9;
+			border-radius: 15px;
 		}
+
+		#textareaid
+		{
+			margin-top:20px;
+			margin-left: 10px;
+			float: left;
+		    width:90%;
+		    height:40px;
+		    color: #000000;
+		    font-size: 14px;
+		    background color: #00000000;
+		    background-bottom: 2px solid #c1c1c1;
+		    border:1px solid #00000000;
+		}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #346cc8; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #092554; 
+}
 	</style>
 </head>
 	<body style="background-image: linear-gradient(to right,#092554,#346cc8);">
@@ -46,18 +83,25 @@
 				<img src="imageicon.png" style="float: right;height: 60px;width: 70px;">
 				<br>
 				<!-- // -->
-				<div id="login_div_block" style="position: absolute;top: 50%;transform: translateY(-50%);background-color: #ffffff;display: none;">
+				<div id="login_div_block" style="position: absolute;top: 50%;transform: translateY(-50%);background-color: #ffffff;width: 22%;
+
+
+						display: none;
+
+				">
+
+
 					<p style="color: #33b0ef;font-size: 15px;margin-left: 20px;margin-top: 50px;">LOGIN</p>
-					<div style="border-bottom: 2px solid #c1c1c1;width: 120%;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-left: 40px;margin-top: 30px;">
+					<div style="border-bottom: 2px solid #c1c1c1;width: 80%;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-left: 40px;margin-top: 30px;">
 						<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
 						<input type="text" name="USERNAME"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="USERNAME"; >
 					</div>
 
-					<div style="border-bottom: 2px solid #c1c1c1;margin-top: 50px;width: 120%;margin-left: 40px;;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-top: 50px;">
+					<div style="border-bottom: 2px solid #c1c1c1;margin-top: 50px;width: 80%;margin-left: 40px;;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-top: 50px;">
 						<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
 						<input type="text" name="PASSWORD"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="PASSWORD"; >
 					</div>
-					<p style="margin-left: 40px;margin-top: 50px; width: 120%; border-radius: 18px; height: 25px;font-size: 13px;background-color: #27aaf0;color: #bce6f9;padding-top: 12px;text-align: center;"><strong>LOGIN</strong></p>
+					<p style="margin-left: 40px;margin-top: 50px; width: 80%; border-radius: 18px; height: 25px;font-size: 13px;background-color: #27aaf0;color: #bce6f9;padding-top: 12px;text-align: center;"><strong>LOGIN</strong></p>
 				</div>
 
 				<!-- // -->
@@ -71,25 +115,29 @@
 					<textarea id="organisation_register" readonly="true" style="width: 47%;height: 21px;margin-left: 2px;margin-right: -4px;background-color: #ffffff;color: #092554;float: right;border-left: 2px solid #092554;border-right: 2px solid #092554;border-top: 2px solid #092554;border-bottom: 2px solid #00000000;resize: none;text-align: center;padding-top: 10px;">ORGANISATION</textarea>
 					</p>
 					</center><br>
-					<div style="width: 100%;height: 100%;border: 2px solid #092554;margin-top: 16px;">
-						<div style="width: 100%; height:100%;border: 1px solid #00000000;">
+					<div style="width: 100%;height: 100%;border: 2px solid #092554;margin-top: 16px;overflow: auto;
+
+display: none;
+
+					">
+						<div style="width: 98%; height:100%;border: 1px solid #00000000;">
 							<center>
 							<form style="border: 1px solid #00000000;" name="RegForm" action="submit.php" method="post" onsubmit="return form_Validate()">
 							<fieldset style="border: 1px solid #00000000;">	
 							<input class="input_box" type="text" placeholder="NAME" name="Name" id="textboxid" autofocus><br>
 							<input type="number" class="input_box" placeholder="AGE" name="Age" id="textboxid"><br><br><br><br><br><br>
 							<span style="margin-top: 0px;margin-left: -258px;">SEX:</span><br>
-							    <input type="radio" value="MALE" name="MALE" style="margin-left:-120px;margin-top: 10px;">MALE<br>
-							    <input type="radio" value="FEMALE" name="FEMALE" style="margin-left:-103px;margin-top: 10px;">FEMALE<br> 
-							    <input type="radio" value="OTHER" name="OTHER" style="margin-left:-112px;margin-top: 10px;">OTHER<br>
+							    <input type="radio" value="MALE" name="Gender" style="margin-left:-120px;margin-top: 10px;">MALE<br>
+							    <input type="radio" value="FEMALE" name="Gender" style="margin-left:-103px;margin-top: 10px;">FEMALE<br> 
+							    <input type="radio" value="OTHER" name="Gender" style="margin-left:-112px;margin-top: 10px;">OTHER<br>
 							<select placeholder="PROFESSION" class="input_box" name="Profession" style="height: 27px;">
 							<option > PROFESSION </option>	
 							<option value="Government" id="textboxid">Government Employee </option>
-							<option value="Private">Private Employee </option>
-							<option value="Bussiness">Bussiness </option>
-							<option value="Other"> Other </option>
+							<option value="Private" id="textboxid">Private Employee </option>
+							<option value="Bussiness" id="textboxid">Bussiness </option>
+							<option value="Other" id="textboxid"> Other </option>
 							</select><br>
-							<select placeholder="STATE" class="input_box" name="State">
+							<select placeholder="STATE" class="input_box" name="State" style="height: 27px;">
 							<option > SELECT STATE </option>	
 							<option value="Andhra Pradesh" id="textboxid">Andhra Pradesh </option>
 							<option value="Arunachal Pradesh">Arunachal Pradesh </option>
@@ -131,6 +179,31 @@
 						</div>
 					</div>
 					
+
+<div style="width: 98%;height: 100%;border: 2px solid #092554;margin-top: 16px; overflow: auto;">
+	
+	<center>
+	<form name="OrgRegForm" style="border: 1px solid #00000000;" action="submit.php" method="post" onsubmit="return form_Validate()">
+	<fieldset style="border: 1px solid #00000000;">	
+	<input type="text" placeholder="ORGANISATION NAME" name="Organisation-Name" class="input_box" autofocus> <br>
+	<input type="email" placeholder="EMAIL-ID" class="input_box" name="Email-id"><br><br><br><br><br><br>
+	<span style="margin-top: 0px;margin-left: -145px;">WORKING AREA :</span><br>
+	    <input type="radio" value="regional" name="region" style="margin-left: -151px;">REGIONAL<br>
+	        <input type="radio" value="national" name="region" style="margin-left: -152px">NATIONAL<br> 
+	        <input type="radio" value="INTERNATIONAL" name="region" style="margin-left: -105px">INTERNATIONAL<br>
+	<textarea placeholder="ABOUT YOU" id="textareaid" name="About_organisation"></textarea><br>
+	<textarea placeholder="HEAD-OFFICE ADDRESS" id="textareaid" name="head_office_add"></textarea><br>
+	<input type="password" placeholder="PASSWORD" class="input_box" name="Password"><br>
+	<input type="password" placeholder="CONFIRM PASSWORD" class="input_box" name="ConfirmPassword"><br>
+	<input type="submit" value="SUBMIT" name="submit" class="c">
+	<input type="reset" value="RESET" name="reset" class="c">
+	</fieldset>
+	</form>
+	</center>
+
+</div>
+
+
 				</div>
 			</div>
 		</div>

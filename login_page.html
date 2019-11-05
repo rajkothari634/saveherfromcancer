@@ -2,6 +2,75 @@
 <html>
 <head>
 	<title></title>
+	<script type="text/javascript">
+		function change_register_type(id){
+			switch(id){
+				case organisation_register:
+				document.getElementById("organisation_register_form").style.display = "block";
+				document.getElementById("person_register_form").style.display = "none";
+				document.getElementById("organisation_register").style.border = "2px solid #092554";
+				document.getElementById("organisation_register").style.borderBottom = "2px solid #ffffff";
+				document.getElementById("person_register").style.border = "2px solid #00000000";
+				break;
+				case person_register:
+				document.getElementById("person_register_form").style.display = "block";
+				document.getElementById("organisation_register_form").style.display = "none";
+				document.getElementById("person_register").style.border = "2px solid #092554";
+				document.getElementById("person_register").style.borderBottom = "2px solid #ffffff";
+				document.getElementById("organisation_register").style.border = "2px solid #00000000";
+				break;
+			}
+		}
+		function change_state(id){
+			switch(id){
+				case open_login_div:
+				document.getElementById("open_login_div").classList.remove("unactive_login_div");
+				document.getElementById("open_login_div").classList.add("active_login_div");
+				document.getElementById("open_register_div").classList.remove("active_login_div");
+				document.getElementById("open_register_div").classList.add("unactive_login_div");
+
+
+
+
+				// document.getElementById("open_login_div").style.backgroundColor = "white";
+				// document.getElementById("open_login_div").style.color = "black";
+				// document.getElementById("open_login_div").disabled = "true";
+				// document.getElementById("open_login_div").style.boxShadow = "0px 4px 8px 0px #66000000, 0px 6px 20px 0px #33000000";
+				// document.getElementById("open_register_div").style.boxShadow = "0px 0px 0px 0px #00000000";
+				// document.getElementById("open_register_div").style.color = "#ffffff";
+				// document.getElementById("open_register_div").disabled = "false";
+				// document.getElementById("open_register_div").style.backgroundColor = "#00000000";
+
+				document.getElementById("login_div_block").style.display = "block";
+				document.getElementById("register_div_block").style.display = "none";
+
+
+				break;
+				case open_register_div:
+
+				document.getElementById("open_login_div").classList.remove("active_login_div");
+				document.getElementById("open_login_div").classList.add("unactive_login_div");
+				document.getElementById("open_register_div").classList.remove("unactive_login_div");
+				document.getElementById("open_register_div").classList.add("active_login_div");
+
+				// document.getElementById("open_register_div").style.backgroundColor = "white";
+				// document.getElementById("open_register_div").style.color = "black";
+				// document.getElementById("open_register_div").style.boxShadow = "0px 4px 8px 0px #66000000, 0px 6px 20px 0px #33000000";
+				// document.getElementById("open_login_div").style.boxShadow = "0px 0px 0px 0px #00000000";
+				// document.getElementById("open_register_div").disabled = "false";
+				// document.getElementById("open_login_div").style.backgroundColor = "#00000000";
+				// document.getElementById("open_login_div").style.color = "#ffffff";
+				// document.getElementById("open_login_div").disabled = "false";
+
+				document.getElementById("login_div_block").style.display = "none";
+				document.getElementById("register_div_block").style.display = "block";
+
+
+
+				break;
+			}
+		}
+	</script>
 	<style type="text/css">
 		.input_box{
 			width: 90%;
@@ -15,7 +84,6 @@
 			padding-bottom: 10px;
 			margin-top:20px;
 			float:left;
-
 		}
 		.c
 		{
@@ -43,6 +111,23 @@
 		    background-bottom: 2px solid #c1c1c1;
 		    border:1px solid #00000000;
 		}
+		.active_login_div{
+			cursor: pointer;
+			float: right;
+			text-align: center;
+			font-size: 11px;
+			border-bottom-left-radius: 11px;border-top-left-radius: 11px;
+			color: black;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			background-color: #ffffff;
+		}
+		.unactive_login_div{
+			border-bottom-left-radius: 11px;border-top-left-radius: 11px;
+			cursor: pointer;
+			color: #ffffff; 
+			float: right;
+			text-align: center;
+		}
 
 /* width */
 ::-webkit-scrollbar {
@@ -68,9 +153,9 @@
 	<body style="background-image: linear-gradient(to right,#092554,#346cc8);">
 		<div id="login_page" style="width: 85%;margin-top: 80px;margin-left: 100px;box-shadow: 10px;">
 			<div id="welcome_div"style="background-image: linear-gradient(to right,#092554,#346cc8);float: left;width: 70%;height: 570px; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-				<p style=" color: #ffffff;float: right;margin-top: 20px;width: 70px;height: 22px;text-align: center;margin-right:0px;padding-top: 11px;font-size: 11px;padding-bottom: 5px;padding-left: 8px;">LOGIN</p>
+				<p id="open_login_div" class="active_login_div" onclick="change_state(this)" style="margin-top: 20px;width: 70px;height: 22px;margin-right:0px;padding-top: 11px;padding-bottom: 5px;padding-left: 8px;">LOGIN</p>
 				<br><br><br>
-				<p style=" float: right;width: 90px;height: 22px;text-align: center;margin-right:-77px;padding-top: 11px;font-size: 11px;padding-bottom: 5px;padding-left: 8px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #ffffff;border-bottom-left-radius: 11px;border-top-left-radius: 11px;color: black;">REGISTER</p>
+				<p id="open_register_div" class="unactive_login_div" onclick="change_state(this)" style="width: 90px;height: 22px;margin-right:-77px;padding-top: 11px;font-size: 11px;padding-bottom: 5px;padding-left: 8px;">REGISTER</p>
 				<br><br><br>
 				<h6 style="margin-left: 125px;color: #5792be;font-size: 33px;">Welcome to</h6>
 				<br><br>
@@ -83,43 +168,34 @@
 				<img src="imageicon.png" style="float: right;height: 60px;width: 70px;">
 				<br>
 				<!-- // -->
-				<div id="login_div_block" style="position: absolute;top: 50%;transform: translateY(-50%);background-color: #ffffff;width: 22%;
-
-
-						display: none;
-
-				">
-
-
+				<!-- login div start -->
+				<div id="login_div_block" style="position: absolute;top: 50%;transform: translateY(-50%);background-color: #ffffff;width: 22%;">
 					<p style="color: #33b0ef;font-size: 15px;margin-left: 20px;margin-top: 50px;">LOGIN</p>
 					<div style="border-bottom: 2px solid #c1c1c1;width: 80%;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-left: 40px;margin-top: 30px;">
 						<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
-						<input type="text" name="USERNAME"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="USERNAME"; >
+						<input type="text" name="USERNAME"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="USERNAME";>
 					</div>
 
 					<div style="border-bottom: 2px solid #c1c1c1;margin-top: 50px;width: 80%;margin-left: 40px;;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-top: 50px;">
 						<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
-						<input type="text" name="PASSWORD"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="PASSWORD"; >
+						<input type="text" name="PASSWORD"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="PASSWORD";>
 					</div>
 					<p style="margin-left: 40px;margin-top: 50px; width: 80%; border-radius: 18px; height: 25px;font-size: 13px;background-color: #27aaf0;color: #bce6f9;padding-top: 12px;text-align: center;"><strong>LOGIN</strong></p>
 				</div>
-
-				<!-- // -->
-				<div style="height: 75%;width: 96%;background-color: #ffffff;margin-top: 60px;margin-left: 5px;margin-right: 5px;">
+				<!-- login div over -->
+				<!-- // --> 
+				<!-- register div start -->
+				<div id="register_div_block" style="height: 75%;width: 96%;background-color: #ffffff;margin-top: 60px;margin-left: 5px;margin-right: 5px;display: none;">
 					<!-- <div style="border: 2px solid green;margin: 10px;height: 40px;width: 98%;">
 						<div style="float: left;border:2px solid blue;height: 100%;width: "></div>
 					</div> -->
 					<center>
 						<p>
-					<textarea id="person_register" readonly="true" style="width: 47%;height: 30px;background-color: #00000000;color: #000000;float: left;resize: none;text-align: center;border: 2px solid #00000000;">PERSON</textarea>
-					<textarea id="organisation_register" readonly="true" style="width: 47%;height: 21px;margin-left: 2px;margin-right: -4px;background-color: #ffffff;color: #092554;float: right;border-left: 2px solid #092554;border-right: 2px solid #092554;border-top: 2px solid #092554;border-bottom: 2px solid #00000000;resize: none;text-align: center;padding-top: 10px;">ORGANISATION</textarea>
-					</p>
+						<textarea id="person_register" readonly="true" style="width: 47%;height: 21px;cursor: pointer;background-color: #ffffff;color: #000000;float: left;resize: none;text-align: center;border: 2px solid #092554;border-bottom: 2px solid #ffffff;padding-top: 10px;"onclick="change_register_type(this)">PERSON</textarea>
+						<textarea id="organisation_register" readonly="true" style="width: 47%;height: 21px;cursor: pointer;margin-left: 2px;margin-right: -4px;background-color: #ffffff;color: #092554;float: right;resize: none;text-align: center;padding-top: 10px;border: 2px solid #00000000;" onclick="change_register_type(this)">ORGANISATION</textarea>
+						</p>
 					</center><br>
-					<div style="width: 100%;height: 100%;border: 2px solid #092554;margin-top: 16px;overflow: auto;
-
-display: none;
-
-					">
+					<div id="person_register_form" style="width: 100%;height: 100%;border: 2px solid #092554;margin-top: 16px;overflow: auto;display: block;">
 						<div style="width: 98%; height:100%;border: 1px solid #00000000;">
 							<center>
 							<form style="border: 1px solid #00000000;" name="RegForm" action="submit.php" method="post" onsubmit="return form_Validate()">
@@ -178,33 +254,29 @@ display: none;
 							</center>
 						</div>
 					</div>
-					
-
-<div style="width: 98%;height: 100%;border: 2px solid #092554;margin-top: 16px; overflow: auto;">
-	
-	<center>
-	<form name="OrgRegForm" style="border: 1px solid #00000000;" action="submit.php" method="post" onsubmit="return form_Validate()">
-	<fieldset style="border: 1px solid #00000000;">	
-	<input type="text" placeholder="ORGANISATION NAME" name="Organisation-Name" class="input_box" autofocus> <br>
-	<input type="email" placeholder="EMAIL-ID" class="input_box" name="Email-id"><br><br><br><br><br><br>
-	<span style="margin-top: 0px;margin-left: -145px;">WORKING AREA :</span><br>
-	    <input type="radio" value="regional" name="region" style="margin-left: -151px;">REGIONAL<br>
-	        <input type="radio" value="national" name="region" style="margin-left: -152px">NATIONAL<br> 
-	        <input type="radio" value="INTERNATIONAL" name="region" style="margin-left: -105px">INTERNATIONAL<br>
-	<textarea placeholder="ABOUT YOU" id="textareaid" name="About_organisation"></textarea><br>
-	<textarea placeholder="HEAD-OFFICE ADDRESS" id="textareaid" name="head_office_add"></textarea><br>
-	<input type="password" placeholder="PASSWORD" class="input_box" name="Password"><br>
-	<input type="password" placeholder="CONFIRM PASSWORD" class="input_box" name="ConfirmPassword"><br>
-	<input type="submit" value="SUBMIT" name="submit" class="c">
-	<input type="reset" value="RESET" name="reset" class="c">
-	</fieldset>
-	</form>
-	</center>
-
-</div>
-
-
+					<div id="organisation_register_form" style="width: 99%;height: 100%;border: 2px solid #092554;margin-top: 16px; overflow: auto;display: none;">
+						
+						<center>
+						<form name="OrgRegForm" style="border: 1px solid #00000000;" action="submit.php" method="post" onsubmit="return form_Validate()">
+						<fieldset style="border: 1px solid #00000000;">	
+						<input type="text" placeholder="ORGANISATION NAME" name="Organisation-Name" class="input_box" autofocus> <br>
+						<input type="email" placeholder="EMAIL-ID" class="input_box" name="Email-id"><br><br><br><br><br><br>
+						<span style="margin-top: 0px;margin-left: -145px;">WORKING AREA :</span><br>
+						    <input type="radio" value="regional" name="region" style="margin-left: -151px;">REGIONAL<br>
+						        <input type="radio" value="national" name="region" style="margin-left: -152px">NATIONAL<br> 
+						        <input type="radio" value="INTERNATIONAL" name="region" style="margin-left: -105px">INTERNATIONAL<br>
+						<textarea placeholder="ABOUT YOU" id="textareaid" name="About_organisation"></textarea><br>
+						<textarea placeholder="HEAD-OFFICE ADDRESS" id="textareaid" name="head_office_add"></textarea><br>
+						<input type="password" placeholder="PASSWORD" class="input_box" name="Password"><br>
+						<input type="password" placeholder="CONFIRM PASSWORD" class="input_box" name="ConfirmPassword"><br>
+						<input type="submit" value="SUBMIT" name="submit" class="c">
+						<input type="reset" value="RESET" name="reset" class="c">
+						</fieldset>
+						</form>
+						</center>
+					</div>
 				</div>
+				<!-- register div over -->
 			</div>
 		</div>
 	</body>

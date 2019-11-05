@@ -2,6 +2,30 @@
 <html>
 <head>
 	<title>Cancer A-Z</title>
+	<script type="text/javascript">
+		function cancer_info(id){
+			switch(id){
+				case one:
+				location.replace("cancer_a_z.html");
+				break;
+				case two:
+				location.replace("cancer_a_z.html");
+				break;
+				case three:
+				location.replace("cancer_a_z.html");
+				break;
+				case four:
+				location.replace("cancer_a_z.html");
+				break;
+				case five:
+				location.replace("cancer_a_z.html");
+				break;
+				case all_type:
+				location.replace("cancer_all_type.html");
+				break;
+			}
+		}
+	</script>
 <style type="text/css">
 	.image_cancer_a_z{
 		position: absolute;
@@ -32,8 +56,15 @@
 	.cancer_type{
 		width: 31%;
 		height: 250px;
+		cursor: pointer;
 		border: 1px solid #c1c1c1;
 		background-color: #f9f9f9;
+	}
+	.cancer_type:hover .cancer_type_name{
+		color: #1057e3;
+	}
+	.cancer_type:hover{
+		opacity: 0.5;
 	}
 	.cancer_type_image{
 		width: 100%;
@@ -53,7 +84,7 @@
 	<div class="div_cancer_a_z">
 	<img src="background.png" class="image_cancer_a_z">
 
-		<div class="top_donate_button">
+		<div id="donate_button" class="top_donate_button" style="cursor: pointer;">
 			<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 		</div>
 			<img class="center_element" src="background.png" style="width: 75px;height: 75px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
@@ -64,35 +95,35 @@
 		<p style="color: black;font-size: 22px;font-style: italic;width: 73%;margin-top: -30px;">Whether you or someone you love has cancer, knowing what to expect can help you cope. From basic information about cancer and its causes to in-depth information on specific cancer types – including risk factors, early detection, diagnosis, and treatment options – you'll find it here.</p>
 		<br>
 		<center>
-		<div class="cancer_all_type" style="width: 80%;height: 600px;">
-			<div class="cancer_type" style="float: left;">
-				<img class="cancer_type_image" src="background.png">
-				<p class="cancer_type_name" >CANCER A-Z</p>
+			<div class="cancer_all_type" style="width: 80%;height: 600px;">
+				<div class="cancer_type" id="one"  style="float: left;" onclick="cancer_info(this)">
+					<img class="cancer_type_image" src="background.png">
+					<p class="cancer_type_name" >CANCER A-Z</p>
+				</div>
+				<div class="cancer_type" id="two" onclick="cancer_info(this)">
+					<img class="cancer_type_image" src="background.png" >
+					<p class="cancer_type_name" >CANCER A-Z</p>
+				</div>
+				<div class="cancer_type" id="three" style="float: right;margin-top: -252px;"  onclick="cancer_info(this)" >
+					<img class="cancer_type_image" src="background.png">
+					<p class="cancer_type_name" >CANCER A-Z</p>
+				</div>
+				<br><br>
+				<div class="cancer_type" id="four"  style="float: left;" onclick="cancer_info(this)" >
+					<img class="cancer_type_image" src="background.png">
+					<p class="cancer_type_name" >CANCER A-Z</p>
+				</div>
+				<div class="cancer_type" id="five" onclick="cancer_info(this)">
+					<img class="cancer_type_image" src="background.png" >
+					<p class="cancer_type_name" >CANCER A-Z</p>
+				</div>
+				<div class="cancer_type" id="all_type"  style="float: right;margin-top: -252px;" onclick="cancer_info(this)" >
+					<br>
+					<p style="color: #0038a8;font-size: 35px;text-align: center;width: 100%;margin-top: 50px;">VIEW All</p>
+					<p style="color: #0038a8;font-size: 35px;text-align: center;width: 100%;margin-top: -30px;">Cancer Types</p>
+				</div>
+				
 			</div>
-			<div class="cancer_type">
-				<img class="cancer_type_image" src="background.png" >
-				<p class="cancer_type_name" >CANCER A-Z</p>
-			</div>
-			<div class="cancer_type" style="float: right;margin-top: -252px;">
-				<img class="cancer_type_image" src="background.png">
-				<p class="cancer_type_name" >CANCER A-Z</p>
-			</div>
-			<br><br>
-			<div class="cancer_type" style="float: left;">
-				<img class="cancer_type_image" src="background.png">
-				<p class="cancer_type_name" >CANCER A-Z</p>
-			</div>
-			<div class="cancer_type">
-				<img class="cancer_type_image" src="background.png" >
-				<p class="cancer_type_name" >CANCER A-Z</p>
-			</div>
-			<div class="cancer_type" style="float: right;margin-top: -252px;">
-				<br>
-				<p style="color: #0038a8;font-size: 35px;text-align: center;width: 220px;margin-top: 50px;">VIEW All</p>
-				<p style="color: #0038a8;font-size: 35px;text-align: center;width: 220px;margin-top: -30px;">Cancer Types</p>
-			</div>
-			
-		</div>
 		</center>
 	</center>
 </body>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/">
 <html>
 <head>
@@ -78,7 +79,8 @@
 
 	
 		<textarea style="width: 50%;height: 30px;font-size: 20px;text-align: left;padding-left: 15px;padding-top: 5px;resize: none;margin-left: 19%;" placeholder="Search Box...."></textarea>
-		<div style="width: 40px;height: 40px;background-color: #cd1e41;float: right;margin-right: 20%;"><img src="background.png" style="width: 30px;margin-top: 5px;height: 30px;"></div>
+		<div style="width: 40px;height: 40px;background-color: #cd1e41;float: right;margin-right: 20%;">
+			<img src="background.png" style="width: 30px;margin-top: 5px;height: 30px;"></div>
 		<br>
 		<br><br>
 		<table style="width: 65%;margin-top: 10px;font-size: 20px;text-align: center;">

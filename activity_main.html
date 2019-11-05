@@ -2,7 +2,47 @@
 <html>
 <head>
 	<title></title>
+	<script type="text/javascript">
+		function navbar_forward(id){
+			
+			switch(id){
+				case cancer_a_to_z:
+				location.replace("cancer_a_z.html");
+				break;
+				case donation_list:
+				location.replace("donation_information.html");
+				break;
+				case organisations:
+				location.replace("organisation_list.html");
+				break;
+				case about_us:
+				location.replace("about_us.html");
+				break;
+				case div_cancer_a_to_z:
+				location.replace("cancer_a_z.html");
+				break;
+				case div_donation_list:
+				location.replace("donation_information.html");
+				break;
+				case div_organisations:
+				location.replace("organisation_list.html");
+				break;
+				case div_about_us:
+				location.replace("about_us.html");
+				break;
+			}
+		}
+	</script>
 	<style type="text/css">
+		*{
+			padding: 0px;
+		}
+		.div_block_nav:hover .div_highlighted_heading {
+			color: #1e66f6;
+			border-bottom: 0px solid #00000000;
+			cursor: pointer;
+			font-style: bold;
+		}
 		.top_donate_button{
 			float: right;
 			background-color: #cd1e41;
@@ -14,6 +54,7 @@
 		}
 		.navigation_dropdown{
 			height: 33px;
+			cursor: pointer;
 			color: #1e1e23;
 			font-size: 16px;
 			font-style: bold;
@@ -24,13 +65,7 @@
 			padding-top: 12px;
 			background-color: #f7f7f7;
 		}
-		#div_block_info:hover{
-
-			color: #2d6be6;
-			cursor: pointer;
-			border-bottom: 1px solid #2d6be6;
-
-		}
+		
 
 		#phone_number{
 			cursor: pointer;
@@ -67,16 +102,18 @@
 						<legend style="font-style: bold;text-align: center;font-size: 15px;color: #163e6f;font-family:Arial;">
 						<img src="callicon.png" style="height: 20px; width: 20px;font-style: bold;letter-spacing: 1px;">
 						 Cancer Helpline</legend>
-						<center style="font-size: 12px;margin-left: 5px;font-style: bold;margin-bottom: 15px;"><a id="phone_number" onclick="call_functio()" style="margin-top: -1px;margin-bottom: 1px;color: #595959;font-family: Arial;">917-9904-378</a></center>
+						<center style="font-size: 12px;margin-left: 5px;font-style: bold;margin-bottom: 15px;color: #666666;">
+							<a id="phone_number" onclick="call_function()" style="margin-top: -1px;margin-bottom: 1px;color: #666666;font-family: Arial;">917-9904-378</a>
+						</center>
 					</fieldset>
 				</form>
 				<img id="company_logo" src="callicon.png" style="height: 80px;width: 80px;margin-right: 50px;margin-top: 10px;">
 		
-				<div class="top_donate_button" style="">
+				<div class="top_donate_button" id="donate_button">
 					<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 				</div>
 				<div id="top_log_in" style="width: 60px;height: 20px;float: right;margin-top: 35px;margin-right: 20px;">
-					<center style="color: solid black;font-size: 15px"><a href="log_in_page.html"  id="log_in_button" style="color: #595959;"> Log in </a></center>
+					<center style="color: solid black;font-size: 15px"><a href="login_page.html"  id="log_in_button" style="color: #595959;"> Log in </a></center>
 				</div>
 			</div>
 		</center>
@@ -84,10 +121,10 @@
 		<div id="navigation_bar" style="height: 50px;background-color: #f7f7f7;border-bottom: 1px solid #c1c1c1;margin-top: 1px;" width="100%">
 			
 				<p style="margin-left: 250px;margin-top: -1px;">
-					<textarea id="cancer_a_to_z" class="navigation_dropdown" readonly="true" style="width: 20%;">CANCER A-Z</textarea>
-					<textarea id="stay_healthy" class="navigation_dropdown" readonly="true" style="width: 20%">DONATION LIST</textarea>
-					<textarea id="treatment" class="navigation_dropdown" readonly="true" style="width: 20%;">ORGANISATIONS</textarea>
-					<textarea id="about_us" class="navigation_dropdown" readonly="true" style="width: 20%;">ABOUT US</textarea>
+					<textarea id="cancer_a_to_z" class="navigation_dropdown" readonly="true" style="width: 20%;" onclick="navbar_forward(this)">CANCER A-Z</textarea>
+					<textarea id="donation_list" class="navigation_dropdown" readonly="true" style="width: 20%" onclick="navbar_forward(this)">DONATION LIST</textarea>
+					<textarea id="organisations" class="navigation_dropdown" readonly="true" style="width: 20%;" onclick="navbar_forward(this)">ORGANISATIONS</textarea>
+					<textarea id="about_us" class="navigation_dropdown" readonly="true" style="width: 20%;" onclick="navbar_forward(this)">ABOUT US</textarea>
 				</p>
 			
 		</div>
@@ -121,19 +158,19 @@ from every angle.</p>
 
 				<frameset rows="25%,50%,25%">
 					<frame>
-						<div id="block_cancer_a-z" class="div_block_info"  style="width: 100%;height: 270px;border: 1px solid #c1c1c1; cursor: pointer;">
+						<div id="div_cancer_a_to_z" class="div_block_nav" onclick="navbar_forward(this)" style="width: 100%;height: 270px;border: 1px solid #c1c1c1; cursor: pointer;">
 							<img src="background.png" style="width: 400px;height: 100%;float: right;">
 							<img src="background.png" style="width: 23px;height: 23px; float: left; margin-left: 30px;margin-top: 10px;">
 							<p id="text_cancer_a-z" style="float: left;margin-top: 16px;margin-left: 8px;color: #000000;font-style: bold;font-size: 16px;letter-spacing: 1px;font-style: bold;">CANCER A-Z</p>
 							<br>
-							<h2 class="div_highlighted_heading" style="float: left;margin-left: -135px;margin-top: 30px;border-bottom: 1px solid #c1c1c1;margin-bottom: -60px;">Get expert information</h2>
+							<h2  class="div_highlighted_heading" style="float: left;margin-left: -135px;margin-top: 30px;border-bottom: 1px solid #c1c1c1;margin-bottom: -60px;">Get expert information</h2>
 							<br><br><br><br>
 							<p style="margin-left: 30px;margin-right: 20px;color: #000000;margin-right: 410px;text-align: left;padding-right: 50px;line-height: 30px;">You will get all information regarding every cancer type. All Information is taken from EXPERTS with hope that this will help you or your family member.</p>
 						</div>
 					</frame>
 					<frameset cols="30%,70%" >
 						<frame style="float: left;">
-							<div id="block_about_us" class="div_block_info" style="border: 1px solid #c1c1c1;height: 560px;width: 30%;float: left;margin-top: 20px;">
+							<div id="div_about_us" class="div_block_nav" onclick="navbar_forward(this)" style="border: 1px solid #c1c1c1;height: 560px;width: 30%;float: left;margin-top: 20px;cursor: pointer;">
 							<img src="background.png" style="height: 250px;width: 100%;"><br>
 							<img src="background.png" style="width: 23px;height: 23px;margin-left: 30px;margin-top: 10px;float: left;">
 							<p style="float: left;margin-top: 16px;margin-left: 8px;color: #000000;font-style: bold;font-size: 16px;letter-spacing: 1px;font-style: bold;">ABOUT US</p>
@@ -146,24 +183,24 @@ from every angle.</p>
 						<frame style="float: right;">
 						<frameset rows="50%,50%">
 							<frame>
-							<div style="border: 1px solid #c1c1c1;height: 270px;width: 67%;float: right;margin-top: 20px;">
+							<div  id="div_donationlist" class="div_block_nav" onclick="navbar_forward(this)" style="border: 1px solid #c1c1c1;height: 270px;width: 67%;float: right;margin-top: 20px;cursor: pointer;">
 								<img src="background.png" style="width: 300px;height: 100%;float: right;">
 							<img src="background.png" style="width: 23px;height: 23px; float: left; margin-left: 30px;margin-top: 10px;">
-							<p style="float: left;margin-top: 16px;margin-left: 8px;color: #000000;font-style: bold;font-size: 16px;letter-spacing: 1px;font-style: bold;">CANCER A-Z</p>
+							<p style="float: left;margin-top: 16px;margin-left: 8px;color: #000000;font-style: bold;font-size: 16px;letter-spacing: 1px;font-style: bold;">Donation Information</p>
 							<br>
-							<h2 style="float: left;margin-left: -135px;margin-top: 30px;border-bottom: 1px solid #c1c1c1;margin-bottom: -60px;">Get expert information</h2>
+							<h2  class="div_highlighted_heading" style="float: left;margin-left: -135px;margin-top: 30px;border-bottom: 1px solid #c1c1c1;margin-bottom: -60px;">Get every Rupee information</h2>
 							<br><br><br><br>
 							<p style="margin-left: 30px;margin-right: 20px;color: #000000;margin-right: 310px;text-align: left;padding-right: 50px;line-height: 30px;">      sd sfd fshd fhs dfhsfd hdsfhbdsh   fbhsdf  hsd sfd fshd fhs dfhsfd hdsfh bdshfb hsdf   hsd sfd fshd fhs dfhsfd hdsf   hbdshfbhs  dfhsd ssfdhsfd</p>  
 							</div>
 							</frame>
 
 							<frame>
-								<div style="border: 1px solid #c1c1c1;margin-top: 20px;height: 270px;width: 67%;float: right;">
+								<div id="div_organisations" class="div_block_nav"  onclick="navbar_forward(this)" style="border: 1px solid #c1c1c1;margin-top: 20px;height: 270px;width: 67%;float: right;cursor: pointer;">
 									<img src="background.png" style="width: 300px;height: 100%;float: left;">
 								<img src="background.png" style="width: 23px;height: 23px; float: right; margin-right: 30px;margin-top: 10px;">
-								<p style="float: right;margin-top: 16px;margin-right: 8px;color: #000000;font-style: bold;font-size: 16px;letter-spacing: 1px;font-style: bold;">CANCER A-Z</p>
+								<p style="float: right;margin-top: 16px;margin-right: 8px;color: #000000;font-style: bold;font-size: 16px;letter-spacing: 1px;font-style: bold;">Organisation List</p>
 								<br>
-								<h2 style="float: right;margin-right: -135px;margin-top: 30px;border-bottom: 1px solid #c1c1c1;margin-bottom: -60px;">Get expert information</h2>
+								<h2  class="div_highlighted_heading" style="float: right;margin-right: -135px;margin-top: 30px;border-bottom: 1px solid #c1c1c1;margin-bottom: -60px;">Know Our Partner</h2>
 								<br><br><br><br>
 								<p style="margin-left: 20px;color: #000000;text-align: right;margin-right: 30px;padding-left: 50px;line-height: 30px;">      sd sfd fshd fhs dfhsfd hdsfhbdsh   fbhsdf  hsd sfd fshd fhs dfhsfd hdsfh bdshfb hsdf   hsd sfd fshd fhs dfhsfd hdsf   hbdshfbhs  dfhsd ssfdhsfd</p>  
 								</div>

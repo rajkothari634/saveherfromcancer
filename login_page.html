@@ -170,17 +170,18 @@
 				<!-- // -->
 				<!-- login div start -->
 				<div id="login_div_block" style="position: absolute;top: 50%;transform: translateY(-50%);background-color: #ffffff;width: 22%;">
-					<p style="color: #33b0ef;font-size: 15px;margin-left: 20px;margin-top: 50px;">LOGIN</p>
-					<div style="border-bottom: 2px solid #c1c1c1;width: 80%;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-left: 40px;margin-top: 30px;">
-						<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
-						<input type="text" name="USERNAME"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="USERNAME";>
-					</div>
-
-					<div style="border-bottom: 2px solid #c1c1c1;margin-top: 50px;width: 80%;margin-left: 40px;;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-top: 50px;">
-						<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
-						<input type="text" name="PASSWORD"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="PASSWORD";>
-					</div>
-					<p style="margin-left: 40px;margin-top: 50px; width: 80%; border-radius: 18px; height: 25px;font-size: 13px;background-color: #27aaf0;color: #bce6f9;padding-top: 12px;text-align: center;"><strong>LOGIN</strong></p>
+					<form action="login_users.php" method="post">
+						<p style="color: #33b0ef;font-size: 15px;margin-left: 20px;margin-top: 50px;">LOGIN</p>
+						<div style="border-bottom: 2px solid #c1c1c1;width: 80%;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-left: 40px;margin-top: 30px;">
+							<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
+							<input type="text" name="USERNAME" id="username" style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="USERNAME";>
+						</div>
+						<div style="border-bottom: 2px solid #c1c1c1;margin-top: 50px;width: 80%;margin-left: 40px;;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-top: 50px;">
+							<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
+							<input type="password" name="PASSWORD" id="password"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="PASSWORD";>
+						</div>
+						<input type="submit" name="login"style="margin-left: 40px;margin-top: 50px; width: 80%; border-radius: 18px; height: 35px;font-size: 13px;background-color: #27aaf0;color: #bce6f9;padding-top: 6px;text-align: center;" value="LOGIN">
+					</form>
 				</div>
 				<!-- login div over -->
 				<!-- // --> 
@@ -198,7 +199,7 @@
 					<div id="person_register_form" style="width: 100%;height: 100%;border: 2px solid #092554;margin-top: 16px;overflow: auto;display: block;">
 						<div style="width: 98%; height:100%;border: 1px solid #00000000;">
 							<center>
-							<form style="border: 1px solid #00000000;" name="RegForm" action="submit.php" method="post" onsubmit="return form_Validate()">
+							<form style="border: 1px solid #00000000;" name="RegForm" action="welcome.php" method="post">
 							<fieldset style="border: 1px solid #00000000;">	
 							<input class="input_box" type="text" placeholder="NAME" name="Name" id="textboxid" autofocus><br>
 							<input type="number" class="input_box" placeholder="AGE" name="Age" id="textboxid"><br><br><br><br><br><br>
@@ -257,7 +258,7 @@
 					<div id="organisation_register_form" style="width: 99%;height: 100%;border: 2px solid #092554;margin-top: 16px; overflow: auto;display: none;">
 						
 						<center>
-						<form name="OrgRegForm" style="border: 1px solid #00000000;" action="submit.php" method="post" onsubmit="return form_Validate()">
+						<form name="OrgRegForm" style="border: 1px solid #00000000;" action="welcome_organisation.php" method="post" onsubmit="return form_Validate()">
 						<fieldset style="border: 1px solid #00000000;">	
 						<input type="text" placeholder="ORGANISATION NAME" name="Organisation-Name" class="input_box" autofocus> <br>
 						<input type="email" placeholder="EMAIL-ID" class="input_box" name="Email-id"><br><br><br><br><br><br>

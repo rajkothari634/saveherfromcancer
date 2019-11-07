@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<?php
+$servername = "localhost";
+$ue = "root";
+$pd = "";
+$dbname = "save_her_from_cancer";
+
+// Create connection
+$conn = new mysqli($servername, $ue, $pd, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$organisationname = $_POST["Organisation-Name"];
+$organisationId =  $_POST["Organisation-Name"];
+$emailId = $_POST["Email-id"];
+$link = $_POST["Email-id"];
+$password = $_POST["Password"];
+$workingarea = $_POST["region"];
+$aboutyou = $_POST["About_organisation"];
+$address = $_POST["head_office_add"];
+
+
+$sql = "INSERT INTO organisations(organisationname, organisationid, emailid, link, password, workingarea, aboutyou, address)
+VALUES ('$organisationname', '$organisationId', '$emailId','$link', '$password', '$workingarea', '$aboutyou', '$address')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
+</body>
+</html>?>

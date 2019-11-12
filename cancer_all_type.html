@@ -1,27 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:template match="/">
 <html>
 <head>
 	<title>Cancer All Type</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		var a=0;
 		var prev_selected_alphabetId = "A";
 		var curr_selected_alphabetId = "A";
-		function select_alphabet(id){
+		function select_alphabet(firstword){
 			document.getElementById(prev_selected_alphabetId).style.backgroundColor = "#00000000";
 			document.getElementById(prev_selected_alphabetId).style.color = "#000000";
-			prev_selected_alphabetId = id;
-			curr_selected_alphabetId = id;
+			prev_selected_alphabetId = firstword;
+			curr_selected_alphabetId = firstword;
 			document.getElementById(curr_selected_alphabetId).style.backgroundColor = "#cd1e41";
 			document.getElementById(curr_selected_alphabetId).style.color = "#ffffff";
+
+			if (firstword.length == 0) {
+       			 return;
+    		} else {
+        		var xmlhttp = new XMLHttpRequest();
+        		xmlhttp.onreadystatechange = function() {
+         	   if (this.readyState == 4 && this.status == 200) {
+               		$(document).ready(function(){
+            			$("table tbody").empty();
+            		});
+            		var names = this.responseText.split(",");
+					var name;
+					$(document).ready(function(){
+						for(name of names){
+    						//$("table tbody").append("<tr><th>"+ name + "</th></tr>").attr({
+    						// "class" : "cancer_names",
+    						// "id" : name	,
+    						// "onclick" : "open_tr(this)"
+    						// });
+    					$("table tbody").append('<tr id=' + name + ' onclick="' + 'open_cancer_detail(this)" ><td>' + name +'</td></tr>');
+    					}
+
+  					});
+           		}
+        	};
+        	xmlhttp.open("GET", "getallcancertypename.php?q=" + firstword, true);
+        	xmlhttp.send();
+    		}
 		}
+		// $(document).ready(function(){
+			function open_cancer_detail(cancer_name){
+				localStorage.setItem("cancer",cancer_name.textContent);
+   				url = 'cancer_type_details.html';
+				document.location.href = url;
+			}
+
+		function search(){
+    		var value = $("#searchbox").val().toLowerCase();
+   			$("#tableofname tbody tr").filter(function() {
+     			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    		});
+		}
+		
+//var name = document.getElementById(id).value;
 	</script>
 	<style type="text/css">
+		.cancer_names{
+
+		}
+		table tbody tr{
+			cursor: pointer;
+		}
+		table tbody tr:hover{
+			color: #cd1e41;
+		}
 		.table_row{
 			margin-top: 5px;
 			margin-bottom: 5px;
-			cursor: pointer;
 		}
 		.alphabet{
 			 width: 35px;
@@ -46,10 +95,10 @@
 	</div>
 	<center><img class="center_element" src="background.png" style="width: 75px;height: 75px;margin-left: 180px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 10px;">
 	<br>
-	<p id="cancer_heading" style="margin-left: 180px;font-size: 40px;">Cancer Name</p>
-	<p id="heading_below" style="font-size: 25px;width: 60%;margin-top: -15px;">Whether you or a loved one are worried about developing breast cancer, have just been diagnosed, are going through breast cancer treatment, or are trying to stay well after treatment, this detailed information can help you find the answers you need.</p>
+	<p class="u" id="cancer_heading" style="margin-left: 180px;font-size: 40px;">Cancer Name</p>
+	<p class="u" id="heading_below" style="font-size: 25px;width: 60%;margin-top: -15px;">Whether you or a loved one are worried about developing breast cancer, have just been diagnosed, are going through breast cancer treatment, or are trying to stay well after treatment, this detailed information can help you find the answers you need.</p>
 	<br>
-	<textarea class="alphabet" id="A" onclick="select_alphabet('A')" readonly="true">A</textarea>
+	<textarea class="alphabet" id="A" onclick="select_alphabet('A')"  readonly="true">A</textarea>
 	<textarea class="alphabet" id="B" onclick="select_alphabet('B')" readonly="true">B</textarea>
 	<textarea class="alphabet" id="C" onclick="select_alphabet('C')" readonly="true">C</textarea>
 	<textarea class="alphabet" id="D" onclick="select_alphabet('D')" readonly="true">D</textarea>
@@ -78,19 +127,21 @@
 	<br>
 
 	
-		<textarea style="width: 50%;height: 30px;font-size: 20px;text-align: left;padding-left: 15px;padding-top: 5px;resize: none;margin-left: 19%;" placeholder="Search Box...."></textarea>
+		<textarea id="searchbox" style="width: 50%;height: 30px;font-size: 20px;text-align: left;padding-left: 15px;padding-top: 5px;resize: none;margin-left: 19%;" oninput="search()"  placeholder="Search Box...."></textarea>
 		<div style="width: 40px;height: 40px;background-color: #cd1e41;float: right;margin-right: 20%;"><img src="background.png" style="width: 30px;margin-top: 5px;height: 30px;"></div>
 		<br>
 		<br><br>
-		<table style="width: 65%;margin-top: 10px;font-size: 20px;text-align: center;">
-			<tr class="table_row" style="background-color: #c1c1c1;">
-				<th>NAME</th>
-			</tr>
-			<xsl : for-each select="catalog/cd">
-	  			<tr>
-	     			<td><xsl : value-of select="title"/></td>
-	   			</tr>
-   			</xsl : for-each>
+		<table id="tableofname" style="width: 65%;margin-top: 10px;font-size: 20px;text-align: center;">
+			
+			<thead><tr class="table_row" style="background-color: #c1c1c1;">
+				<th style="background-color: #cd1e41;color: #ffffff;">NAME</th>
+			</tr></thead>
+			<tbody>
+				<tr id="eli">
+					<td>eli</td>
+				</tr>
+			</tbody>
+		
 		</table>
 </body>
 </html>

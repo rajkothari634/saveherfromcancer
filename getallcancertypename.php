@@ -1,35 +1,37 @@
 <?php
 // Array with names
-$a[] = "Anna";
-$a[] = "Brittany";
-$a[] = "Cinderella";
-$a[] = "Diana";
-$a[] = "Eva";
-$a[] = "Fiona";
-$a[] = "Gunda";
-$a[] = "Hege";
-$a[] = "Inga";
-$a[] = "Johanna";
-$a[] = "Kitty";
-$a[] = "Linda";
-$a[] = "Nina";
-$a[] = "Ophelia";
-$a[] = "Petunia";
-$a[] = "Amanda";
-$a[] = "Raquel";
-$a[] = "Cindy";
-$a[] = "Doris";
-$a[] = "Eve";
+
+
+$a[] = "Acute Lymphoblastic Leukemia (ALL)";
+$a[] = "Acute Myeloid Leukemia (AML)";
+$a[] = "Adolescents";
+$a[] = "Adrenocortical Carcinoma";
+$a[] = "Childhood Adrenocortical Carcinoma";
+$a[] = "AIDS-Related Cancers";
+$a[] = "Kaposi Sarcoma (Soft Tissue Sarcoma)";
+$a[] = "AIDS-Related Lymphoma (Lymphoma)";
+$a[] = "Primary CNS Lymphoma (Lymphoma)";
+$a[] = "Anal Cancer";
+$a[] = "Appendix Cancer - see Gastrointestinal Carcinoid Tumors";
+$a[] = "Astrocytomas Childhood (Brain Cancer)";
+$a[] = "Atypical Teratoid";
+$a[] = "Basal Cell Carcinoma of the Skin";
+$a[] = "Bile Duct Cancer";
+$a[] = "Bladder Cancer";
+$a[] = "Childhood Bladder Cancer";
+$a[] = "Bone Cancer";
+$a[] = "Brain Tumors";
+$a[] = "Nasal Cavity";
 $a[] = "Evita";
 $a[] = "Sunniva";
 $a[] = "Tove";
 $a[] = "Unni";
-$a[] = "Violet";
+$a[] = "Paranasal Sinus";
 $a[] = "Liza";
-$a[] = "Elizabeth";
-$a[] = "Ellen";
+$a[] = "Neuroblastoma";
+$a[] = "Nasopharyngeal";
 $a[] = "Wenche";
-$a[] = "Vicky";
+$a[] = "Non-Small Cell Lung Cancer";
 
 // get the q parameter from URL
 $q = $_REQUEST["q"];

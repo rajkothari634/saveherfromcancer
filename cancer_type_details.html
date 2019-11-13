@@ -5,51 +5,80 @@
 	<script type="text/javascript">
 		window.onload = function(){
 		var cancer = localStorage.getItem("cancer");
-		window.alert(cancer);
+		document.getElementById("cancer_heading").innerHTML = cancer;
 	}
 	</script>
+	<style type="text/css">
+		.info_part_div{
+			border: 1px solid #c1c1c1;
+			width: 80%;
+			background-color: #f3f3f3;
+		}
+		.div_info_head{
+			float: left;
+			color: #c5324f;
+		
+			margin-left: 10%;
+			font-size: 24px;
+			font-style: bold;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+		.showmore{
+			float: right;
+			width: 30px;height: 30px;
+			border-radius: 40px;
+			margin-right: 10px;
+			margin-top: 15px;
+		}
+		.info_div{
+				width: 80%;
+			float: left;
+			font-size: 20px;
+			margin-left: 10%;
+			margin-top: -10px;
+			text-align: left;
+		}
+	</style>
 </head>
 <body>
-	<div class="top_donate_button" onclick="d()" style="float: right;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #cd1e41;width: 190px;height: 42px;margin-bottom: 100px;margin-top: 25px;margin-right: 20px;color: white;">
+	<div class="top_donate_button" onclick="d()" style="float: right;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #cd1e41;width: 190px;height: 42px;margin-bottom: 100px;margin-top: 25px;margin-right: 20px;color: white;cursor: pointer;">
 		<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 	</div>
-	<center><img class="center_element" src="background.png" style="width: 75px;height: 75px;margin-left: 180px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 10px;">
+	<center><img class="center_element" src="cancer_type_icon.jpg" style="width: 75px;height: 75px;margin-left: 180px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 10px;">
 	<br>
 	<p id="cancer_heading" style="margin-left: 180px;font-size: 40px;">Cancer Name</p>
 	<p id="heading_below" style="font-size: 25px;width: 60%;margin-top: -15px;">Whether you or a loved one are worried about developing breast cancer, have just been diagnosed, are going through breast cancer treatment, or are trying to stay well after treatment, this detailed information can help you find the answers you need.</p>
-	<div id="about_cancer_type" style="border: 1px solid #c1c1c1;width: 80%;height: 100px;background-color: #f3f3f3;">
-		<p style="float: left;font-size: 24px;font-style: bold;margin-top: 10px;margin-left: 10px;">About Cancer type</p>
-		<img src="background.png" style="float: right;width: 30px;height: 30px;border-radius: 40px;margin-right: 10px;margin-top: 15px;">
+	<div style="width: 80%;">
+		<p class="div_info_head">About Cancer type :: </p>
 		<br><br>
-		<p style="float: left;font-size: 16px;width: 100%;margin-left: 10px;margin-top: -10px;text-align: left;">Get basic information about breast cancer, such as what it is and how it forms, as well as the signs and symptoms of the disease.</p>	
-	</div>
-	<br>
-	<div id="cancer_type_risk_prevention" style="border: 1px solid #c1c1c1;width: 80%;height: 100px;background-color: #f3f3f3;">
-		<p style="float: left;font-size: 24px;font-style: bold;margin-top: 10px;margin-left: 10px;">Cancer type Risk and Prevention</p>
-		<img src="background.png" style="float: right;width: 30px;height: 30px;border-radius: 40px;margin-right: 10px;margin-top: 15px;">
+		<p class="info_div" >Breast cancer is a type of cancer that starts in the breast. Cancer starts when cells begin to grow out of control.Breast cancer occurs almost entirely in women, but men can get breast cancer, too.Breast cancer cells usually form a tumor that can often be seen on an x-ray or felt as a lump.</p>	
+
+	<br><br>
+	
+		<p  class="div_info_head">Cancer type Risk and Prevention :: </p>
 		
-		<p style="float: left;font-size: 16px;width: 100%;margin-left: 10px;margin-top: -10px;text-align: left;">Learn about the various risk factors, both genetic and lifestyle-related , as well as prevention methods for breast cancer from the American Cancer Society.</p>	
-	</div>
-	<br><br>
-	<div id="ancer_type_detection_diagnosis" style="border: 1px solid #c1c1c1;width: 80%;height: 100px;background-color: #f3f3f3;">
-		<p style="float: left;font-size: 24px;font-style: bold;margin-top: 10px;margin-left: 10px;">Cancer type Early Detection and Diagnosis</p>
-		<img src="background.png" style="float: right;width: 30px;height: 30px;border-radius: 40px;margin-right: 10px;margin-top: 15px;">
 		
-		<p style="float: left;font-size: 16px;width: 100%;margin-left: 10px;margin-top: -10px;text-align: left;">Get detailed information about breast cancer detection through tests such as mammograms, ultrasounds, other imaging tests and biopsies.</p>	
-			</div>
+		<p  class="info_div" >There are several Lifestyle-related Breast Cancer Risk Factors as - drinking alcohol, being overweight or obese, not being physically active, birth control etc. For its prevention ,we may go through the facts as -Genetic Counseling and Testing for Breast Cancer Risk, Deciding Whether to Use Medicine to Reduce Breast Cancer Risk, Preventive Surgery to Reduce Breast Cancer Risk etc.</p>	
+	
 	<br><br>
-	<div id="understanding_cancer_type_diagnosis" style="border: 1px solid #c1c1c1;width: 80%;height: 100px;background-color: #f3f3f3;">
-		<p style="float: left;font-size: 24px;font-style: bold;margin-top: 10px;margin-left: 10px;">Understanding a Cancer type Diagnosis</p>
-		<img src="background.png" style="float: right;width: 30px;height: 30px;border-radius: 40px;margin-right: 10px;margin-top: 15px;">	
-		<p style="float: left;font-size: 16px;width: 100%;margin-left: 10px;margin-top: -10px;text-align: left;">Get the information you need to understand your breast cancer diagnosis with details on the various types of breast cancer, grading, hormone status, staging, and prognosis.</p>
-			</div>
+	
+		<p  class="div_info_head">Cancer type Early Detection and Diagnosis :: </p>
+		
+		<p class="info_div" >Breast cancer is sometimes found after symptoms appear, but many women with breast cancer have no symptoms. This is why regular breast cancer screening is so important. Different tests can be used to look for and diagnose breast cancer. If your doctor finds an area of concern on a screening test (a mammogram), or if you have symptoms that could mean breast cancer, you will need more tests to know for sure if it’s cancer</p>	
+		
 	<br><br>
-	<div id="treating_cancer_type" style="border: 1px solid #c1c1c1;width: 80%;height: 100px;background-color: #f3f3f3;margin-bottom: 100px;">
-		<p style="float: left;font-size: 24px;font-style: bold;margin-top: 10px;margin-left: 10px;">Treating Cancer type</p>
-			<img src="background.png" style="float: right;width: 30px;height: 30px;border-radius: 40px;margin-right: 10px;margin-top: 15px;">
+			<p class="div_info_head">Understanding a Cancer type Diagnosis :: </p>
+			
+		<p class="info_div" >There are several types of breast cancer. The type of breast cancer you have depends on where in the breast it started and other factors. If you have been diagnosed with breast cancer, tests will be done to find out the extent (stage) of the cancer. The stage of a cancer helps determine how serious the cancer is and how best to treat it.</p>
+			
+	<br><br>
+
+		<p class="div_info_head">Treating Cancer type :: </p>
+	
 		<br><br>
-		<p style="float: left;font-size: 16px;width: 100%;margin-left: 10px;margin-top: -10px;text-align: left;">Learn about your choices for breast cancer treatment depending on the type, stage, and hormone status of the cancer, as well as your age, overall health, and personal preferences.</p>	
-		</div>
+		<p class="info_div">Some treatments are local, meaning they treat the tumor without affecting the rest of the body. Most women with breast cancer will have some type of surgery to remove the tumor. Depending on the type of breast cancer and how advanced it is, you might need other types of treatment as well, either before or after surgery, or sometimes both.</p>	
+	</div>
 	</center>
 </body>
 </html>

@@ -3,25 +3,38 @@
 <head>
 	<title>Cancer A-Z</title>
 	<script type="text/javascript">
+		var url;
 		function cancer_info(id){
 			switch(id){
-				case one:
-				location.replace("cancer_a_z.html");
+				case Breast_Cancer:
+				localStorage.setItem("cancer","Breast Cancer");
+   				url = 'cancer_type_details.html';
+				document.location.href = url;
 				break;
-				case two:
-				location.replace("cancer_a_z.html");
+				case Colorectal_Cancer:
+				localStorage.setItem("cancer","Colorectal Cancer");
+   				url = 'cancer_type_details.html';
+				document.location.href = url;
 				break;
-				case three:
-				location.replace("cancer_a_z.html");
+				case Lung_Cancer:
+				localStorage.setItem("cancer","Lung Cancer");
+   				url = 'cancer_type_details.html';
+				document.location.href = url;
 				break;
-				case four:
-				location.replace("cancer_a_z.html");
+				case Cervical_Vancer:
+				localStorage.setItem("cancer","Cervical Vancer");
+   				url = 'cancer_type_details.html';
+				document.location.href = url;
 				break;
-				case five:
-				location.replace("cancer_a_z.html");
+				case Thyroid_Cancer:
+				localStorage.setItem("cancer","Thyroid_Cancer");
+   				url = 'cancer_type_details.html';
+				document.location.href = url;
 				break;
 				case all_type:
-				location.replace("cancer_all_type.html");
+				localStorage.setItem("all_type","Cancer");
+   				url = 'cancer_all_type.html';
+				document.location.href = url;
 				break;
 			}
 		}
@@ -33,7 +46,7 @@
 	}
 	.image_cancer_a_z{
 		position: absolute;
-		height: 470px;
+		height: 570px;
 		width: 100%;
 		margin-top: 0px;
 	}
@@ -53,7 +66,7 @@
 	.center_element{
 		 position: absolute;
 		 z-index: 5px;
-		 top: 435px;
+		 top: 535px;
 		 left: 48%;
 		 background-color: #ffffff;
 	}
@@ -86,40 +99,40 @@
 <body style="background-color: #ffffff;">
 
 	<div class="div_cancer_a_z">
-	<img src="background.png" class="image_cancer_a_z">
+	<img src="cancer_a_z1.jpg" class="image_cancer_a_z">
 
 		<div id="donate_button" class="top_donate_button" style="cursor: pointer;">
 			<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 		</div>
-			<img class="center_element" src="background.png" style="width: 75px;height: 75px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img class="center_element" src="cancer_type_icon.jpg" style="width: 75px;height: 75px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 	</div>
 	<br><br><br><br><br><br>
-	<center style="margin-top: 412px;">
+	<center style="margin-top: 512px;">
 		<p style="color: black;font-size: 40px;font-style: bold;">CANCER A-Z</p>
 		<p style="color: black;font-size: 22px;font-style: italic;width: 73%;margin-top: 20px;">Whether you or someone you love has cancer, knowing what to expect can help you cope. From basic information about cancer and its causes to in-depth information on specific cancer types – including risk factors, early detection, diagnosis, and treatment options – you'll find it here.</p>
 		<br><br>
 		<center>
 			<div class="cancer_all_type" style="width: 80%;height: 600px;">
-				<div class="cancer_type" id="one"  style="float: left;" onclick="cancer_info(this)">
-					<img class="cancer_type_image" src="background.png">
-					<p class="cancer_type_name" >CANCER A-Z</p>
+				<div class="cancer_type" id="Breast_Cancer"  style="float: left;" onclick="cancer_info(this)">
+					<img class="cancer_type_image" src="breast_cancer.jpg">
+					<p class="cancer_type_name" >BREAST CANCER</p>
 				</div>
-				<div class="cancer_type" id="two" onclick="cancer_info(this)">
-					<img class="cancer_type_image" src="background.png" >
-					<p class="cancer_type_name" >CANCER A-Z</p>
+				<div class="cancer_type" id="Colorectal_Cancer" onclick="cancer_info(this)">
+					<img class="cancer_type_image" src="colorectal_cancer.jpg" >
+					<p class="cancer_type_name" >COLORECTAL CANCER</p>
 				</div>
-				<div class="cancer_type" id="three" style="float: right;margin-top: -252px;"  onclick="cancer_info(this)" >
-					<img class="cancer_type_image" src="background.png">
-					<p class="cancer_type_name" >CANCER A-Z</p>
+				<div class="cancer_type" id="Lung_Cancer" style="float: right;margin-top: -252px;"  onclick="cancer_info(this)" >
+					<img class="cancer_type_image" src="lung_cancer.jpg">
+					<p class="cancer_type_name" >LUNG CANCER</p>
 				</div>
 				<br><br>
-				<div class="cancer_type" id="four"  style="float: left;" onclick="cancer_info(this)" >
-					<img class="cancer_type_image" src="background.png">
-					<p class="cancer_type_name" >CANCER A-Z</p>
+				<div class="cancer_type" id="Cervical_Vancer"  style="float: left;" onclick="cancer_info(this)" >
+					<img class="cancer_type_image" src="cervix_uteri_cancer.jpg">
+					<p class="cancer_type_name" >CERVICAL VANCER</p>
 				</div>
-				<div class="cancer_type" id="five" onclick="cancer_info(this)">
-					<img class="cancer_type_image" src="background.png" >
-					<p class="cancer_type_name" >CANCER A-Z</p>
+				<div class="cancer_type" id="Thyroid_Cancer" onclick="cancer_info(this)">
+					<img class="cancer_type_image" src="thyroid_cancer.jpg" >
+					<p class="cancer_type_name" >THYROID CANCER</p>
 				</div>
 				<div class="cancer_type" id="all_type"  style="float: right;margin-top: -252px;" onclick="cancer_info(this)" >
 					<br>

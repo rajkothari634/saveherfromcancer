@@ -2,10 +2,32 @@
 <html>
 <head>
 	<title>Donation Information</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+		var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+            $(document).ready(function(){
+            	$("#listoforganisation").empty();
+            });
+            var names = this.responseText.split(",");
+			var name;
+			}
+        };
+        xmlhttp.open("GET", "getallcancertypename.php?q=" + "listoforganisation", true);
+        xmlhttp.send();
+	}
+		
+	</script>
 	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
 		.image_donation_information{
 		position: absolute;
-		height: 370px;
+		height: 470px;
 		width: 100%;
 		margin-top: 0px;
 	}
@@ -16,6 +38,7 @@
 		position: absolute;
 		top: 20px;
 		right: 50px;
+		cursor: pointer;
 		z-index: 5px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		background-color: #cd1e41;width: 190px;
@@ -25,69 +48,109 @@
 	.center_element{
 		 position: absolute;
 		 z-index: 5px;
-		 top: 335px;
+		 top: 435px;
 		 left: 48%;
 		 background-color: #ffffff;
+	}
+	.info_header{
+		text-align: center;
+		width: 100%;
+		color: #cd1e41;
+		font-size: 16px;
+	}
+	.dol{
+		width: 15px;
+		height: 15px;
+		color: #87031d;
+		font-size: 20px;
+		margin-top: 3px;
+	}
+	.in{
+		width: 100%;
+		height: 20px;
+		color: #87031d;
+		font-size: 20px;
+		margin-top: 40px;
+	}
+	.val{
+		width: 100%;
+		height: 30px;
+		color: #87031d;
+		font-size: 60px;
+		margin-top: 10px;
+		text-align: center;
+	}
+	.circular_money{
+		width: 140px;
+		height: 140px;
+		margin-right: 10px;
+		border-radius: 140px;
+		border: 1px solid #cd1e41;
+		margin-top:0px;
 	}
 	</style>
 </head>
 <body>
 	<div class="div_donation_information">
-		<img src="background.png" class="image_donation_information">
+		<img src="donation_information1.jpg" class="image_donation_information">
 		<div class="top_donate_button">
 			<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 		</div>
-		<img class="center_element" src="background.png" style="width: 75px;height: 75px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		<img class="center_element" src="donation_icon.png" style="width: 75px;height: 75px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 	</div>
 	<br><br><br><br><br><br>
-	<center style="margin-top: 312px;">
+	<center style="margin-top: 412px;">
 		<p style="color: black;font-size: 40px;font-style: bold;">Donation Information</p>
-		<p style="color: black;font-size: 22px;font-style: italic;width: 73%;margin-top: -30px;">Whether you or someone you love has cancer, knowing what to expect can help you cope. From basic information about cancer and its causes to in-depth information on specific cancer types – including risk factors, early detection, diagnosis, and treatment options – you'll find it here.</p>
+		<p style="color: black;font-size: 22px;font-style: italic;width: 73%;margin-top: 20px;">We accept and provide donations to continue fight for the world without cancer.For this purpose, we are in touch with many organisations. Here is the complete information about the total donation collected as well as provided to different organisations.</p>
 		<br>
-		<div style="width: 80%;height: 200px;">
+		<div style="width: 80%;height: 200px;margin-top : 20px;">
 			<div style="width: 33%;height: 200px;float:left;">
-				<p style="text-align: center;width: 100%;color: #cd1e41;font-size: 16px;">Total money</p>
-				<div style="width: 140px;height: 140px;border-radius: 140px;border: 1px solid #cd1e41;margin-top:0px">
+				<p class="info_header">Total money Collected</p>
+				<div class="circular_money">
 				<center>
-					<p style="width: 15px;height: 15px;color: #87031d;font-size: 20px;margin-top: 10px;">$</p>
-					<p style="width: 100%;height: 30px;color: #87031d;font-size: 60px;margin-top: -14px;text-align: center;">50.0</p>
-					<p style="width: 100%;height: 20px;color: #87031d;font-size: 20px;margin-top: -20px">million</p>
+					<p class="dol">$</p>
+					<p class="val">50.0</p>
+					<p class="in">million</p>
 				</center>
 				</div>
 			</div>
 			<div style="width: 33%;height: 200px;float:left;">
-				<p style="text-align: center;width: 100%;color: #cd1e41;font-size: 16px;">Total money</p>
-				<div style="width: 140px;height: 140px;border-radius: 140px;border: 1px solid #cd1e41;margin-top:0px">
+				<p class="info_header">By Organisation</p>
+				<div class="circular_money">
 				<center>
-					<p style="width: 15px;height: 15px;color: #87031d;font-size: 20px;margin-top: 10px;">$</p>
-					<p style="width: 100%;height: 30px;color: #87031d;font-size: 60px;margin-top: -14px;text-align: center;">50.0</p>
-					<p style="width: 100%;height: 20px;color: #87031d;font-size: 20px;margin-top: -20px">million</p>
+					<p class="dol">$</p>
+					<p class="val">50.0</p>
+					<p class="in">million</p>
 				</center>
 				</div>
 			</div>
 			<div style="width: 33%;height: 200px;float:left;">
-				<p style="text-align: center;width: 100%;color: #cd1e41;font-size: 16px;">Total money</p>
-				<div style="width: 140px;height: 140px;border-radius: 140px;border: 1px solid #cd1e41;margin-top:0px">
+				<p class="info_header">By Person</p>
+				<div class="circular_money">
 				<center>
-					<p style="width: 15px;height: 15px;color: #87031d;font-size: 20px;margin-top: 10px;">$</p>
-					<p style="width: 100%;height: 30px;color: #87031d;font-size: 60px;margin-top: -14px;text-align: center;">50.0</p>
-					<p style="width: 100%;height: 20px;color: #87031d;font-size: 20px;margin-top: -20px">million</p>
+					<p class="dol">$</p>
+					<p class="val">50.0</p>
+					<p class="in">million</p>
 				</center>
 				</div>
 			</div>
 		</div>
-		<div style="width: 50%;height: 150px;margin-top: 50px;">
-			<p style="float: left;margin-top: 15px;margin-left: 40px;color: black;font-size: 18px;">ORGAnisation name</p>
-			<div style="width: 140px;height: 140px;border-radius: 140px;border: 1px solid #cd1e41;margin-top:5px;float: right;margin-right: 20px;">
-				<center>
-					<p style="width: 15px;height: 15px;color: #87031d;font-size: 20px;margin-top: 10px;">$</p>
-					<p style="width: 100%;height: 30px;color: #87031d;font-size: 60px;margin-top: -14px;text-align: center;">50.0</p>
-					<p style="width: 100%;height: 20px;color: #87031d;font-size: 20px;margin-top: -20px">million</p>
-				</center>
-			</div>
-			<p style="float: left;width: 70%;height: 50px;color: #c1c1c1;font-size: 14px;text-align: left;margin-left: 40px;margin-top: -0px;">Address of the organisation main office</p>
+		<div id="listoforganisation" style="width: 100%;">
+			<textarea style="width: 25%;font-size: 20px;color: #87031d;text-align: left;resize: none;border: 0px solid #00000000;padding-left: 20px;" readonly="true">Organisation</textarea>
+			<textarea style="width: 25%;font-size: 20px;color: #87031d;text-align: right;resize: none;border: 0px solid #00000000;" readonly="true">Money donated to them</textarea>
+			<div style="width: 50%;height: 150px;margin-top: 10px;border-bottom: 1.5px solid #87031d;border-right: 1.5px solid #87031d;margin-bottom: 50px;">
+				<p style="float: left;margin-top: 15px;margin-left: 40px;color: black;font-size: 18px;">ORGAnisation name</p>
+				<div class="circular_money" style="float: right;">
+					<center>
+						<p class="dol">$</p>
+						<p class="val">50.0</p>
+						<p class="in">million</p>
+					</center>
+				</div>
+				<p style="float: left;width: 70%;height: 50px;color: #c1c1c1;font-size: 14px;text-align: left;margin-left: 40px;margin-top: 20px;">Address of the organisation main office</p>
 
-			<a href="" style="margin-top: -30px;margin-left: 40px;float: left;">nnjernerngiv igutige g</a>
+				<a href="" style="margin-top: -10px;margin-left: 40px;float: left;">nnjernerngiv igutige g</a>
+			</div>
 		</div>
 	</center>
 </body>

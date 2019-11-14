@@ -11,11 +11,24 @@
             $(document).ready(function(){
             	$("#listoforganisation").empty();
             });
-            var names = this.responseText.split(",");
-			var name;
+            var divide = this.responseText.split("&");
+            var organisations = divide[0].split("~");
+            var moneyinfo = divide[1].split(" ");
+            var organisation;
+            document.getElementById("total").innerHTML = moneyinfo[0];
+            document.getElementById("byorganisation").innerHTML = moneyinfo[1];
+            document.getElementById("byperson").innerHTML = moneyinfo[2];
+			$(document).ready(function(){
+				$("#listoforganisation").append('<textarea style="width: 25%;font-size: 20px;color: #87031d;text-align: left;resize: none;border: 0px solid #00000000;padding-left: 20px;" readonly="true">Organisation</textarea><textarea style="width: 25%;font-size: 20px;color: #87031d;text-align: right;resize: none;border: 0px solid #00000000;" readonly="true">Money donated to Organisation</textarea>');
+				for(organisation of organisations){
+					var parts = organisation.split("!");
+					$("#listoforganisation").append('<div id="' + parts[0] + '" style="width: 50%;height: 150px;margin-top: 10px;border-bottom: 1.5px solid #87031d;border-right: 1.5px solid #87031d;margin-bottom: 50px;"><p style="float: left;margin-top: 15px;margin-left: 40px;color: black;font-size: 18px;">' + parts[0] + '</p><div class="circular_money" style="float: right;"><center><p class="dol">$</p><p class="val">' + parts[3] + '</p><p class="in">million</p></center></div><p style="float: left;width: 70%;height: 50px;color: #c1c1c1;font-size: 14px;text-align: left;margin-left: 40px;margin-top: 20px;">' + parts[1] + '</p><a href="' + parts[2] + '" style="margin-top: -10px;margin-left: 40px;float: left;">' + parts[2] + '</a></div>');
+				}
+			});
 			}
         };
-        xmlhttp.open("GET", "getallcancertypename.php?q=" + "listoforganisation", true);
+        var task = "money";
+        xmlhttp.open("GET", "getlistoforganisation.php?q=" + task, true);
         xmlhttp.send();
 	}
 		
@@ -105,21 +118,21 @@
 		<br>
 		<div style="width: 80%;height: 200px;margin-top : 20px;">
 			<div style="width: 33%;height: 200px;float:left;">
-				<p class="info_header">Total money Collected</p>
+				<p    class="info_header">Total money Collected</p>
 				<div class="circular_money">
 				<center>
 					<p class="dol">$</p>
-					<p class="val">50.0</p>
+					<p id = "total" class="val">50.0</p>
 					<p class="in">million</p>
 				</center>
 				</div>
 			</div>
 			<div style="width: 33%;height: 200px;float:left;">
-				<p class="info_header">By Organisation</p>
+				<p  class="info_header">By Organisation</p>
 				<div class="circular_money">
 				<center>
 					<p class="dol">$</p>
-					<p class="val">50.0</p>
+					<p id="byorganisation" class="val">50.0</p>
 					<p class="in">million</p>
 				</center>
 				</div>
@@ -129,7 +142,7 @@
 				<div class="circular_money">
 				<center>
 					<p class="dol">$</p>
-					<p class="val">50.0</p>
+					<p  id="byperson"  class="val">50.0</p>
 					<p class="in">million</p>
 				</center>
 				</div>
@@ -148,7 +161,6 @@
 					</center>
 				</div>
 				<p style="float: left;width: 70%;height: 50px;color: #c1c1c1;font-size: 14px;text-align: left;margin-left: 40px;margin-top: 20px;">Address of the organisation main office</p>
-
 				<a href="" style="margin-top: -10px;margin-left: 40px;float: left;">nnjernerngiv igutige g</a>
 			</div>
 		</div>

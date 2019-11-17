@@ -1,8 +1,3 @@
-<html>
-<head>
-	<title></title>
-</head>
-<body>
 <?php 
 session_start();
 // Change this to your connection info.
@@ -75,5 +70,3 @@ if($isOrganisation === 1){
 }
 }
 ?>
-</body>
-</html>

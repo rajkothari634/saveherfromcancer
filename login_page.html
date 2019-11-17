@@ -3,21 +3,22 @@
 <head>
 	<title></title>
 	<script type="text/javascript">
+		
 		function change_register_type(id){
 			switch(id){
 				case organisation_register:
 				document.getElementById("organisation_register_form").style.display = "block";
 				document.getElementById("person_register_form").style.display = "none";
-				document.getElementById("organisation_register").style.border = "2px solid #092554";
-				document.getElementById("organisation_register").style.borderBottom = "2px solid #ffffff";
-				document.getElementById("person_register").style.border = "2px solid #00000000";
+				document.getElementById("organisation_register").style.border = "1.5px solid #1466a6";
+				document.getElementById("organisation_register").style.borderBottom = "1.5px solid #ffffff";
+				document.getElementById("person_register").style.border = "1.5px solid #00000000";
 				break;
 				case person_register:
 				document.getElementById("person_register_form").style.display = "block";
 				document.getElementById("organisation_register_form").style.display = "none";
-				document.getElementById("person_register").style.border = "2px solid #092554";
-				document.getElementById("person_register").style.borderBottom = "2px solid #ffffff";
-				document.getElementById("organisation_register").style.border = "2px solid #00000000";
+				document.getElementById("person_register").style.border = "1.5px solid #1466a6";
+				document.getElementById("person_register").style.borderBottom = "1.5px solid #ffffff";
+				document.getElementById("organisation_register").style.border = "1.5px solid #00000000";
 				break;
 			}
 		}
@@ -133,7 +134,7 @@
 				<h3 style="margin-left: 125px;margin-top: -100px;color:#e1e6eb; font-size: 38px;font-family: verdana;">Save Her from Cancer</h3>
 				<p style="margin-left: 125px; font-size: 13px;margin-top: -20px;color:#b9cdde;">CANCER may have started the fight, but we will finish it !!</p>
 				<br>
-				<img src="loginicon.png" style="height:300px;float: right;"></img>
+				<img src="login_image_right.png" style="height:300px;float: right;margin-top: -100px;"></img>
 			</div>
 			<div id="login_div" style="float: right;width: 28%;height: 570px; background-color: #ffffff;margin-left: -10px; box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 				<img src="imageicon.png" style="float: right;height: 60px;width: 70px;">
@@ -144,11 +145,11 @@
 					<form action="login_users.php" method="post">
 						<p style="color: #33b0ef;font-size: 15px;margin-left: 20px;margin-top: 50px;">LOGIN</p>
 						<div style="border-bottom: 2px solid #c1c1c1;width: 80%;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-left: 40px;margin-top: 30px;">
-							<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
+							<img src="usernameicon.png" style="height: 20px; width: 20px;float:left;">
 							<input type="text" name="USERNAME" id="username" style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="USERNAME";>
 						</div>
 						<div style="border-bottom: 2px solid #c1c1c1;margin-top: 50px;width: 80%;margin-left: 40px;;height: 22px;background-color: #00000000;padding-bottom: 10px;margin-top: 50px;">
-							<img src="userinfoicon.png" style="height: 20px; width: 20px;float:left;">
+							<img src="passwordicon.png" style="height: 20px; width: 20px;float:left;">
 							<input type="password" name="PASSWORD" id="password"  style="width: 80%;height:20px;color: #000000;background-color: #00000000;font-size: 12px;margin-left:10px;border: 1px solid #00000000; float:left;" placeholder="PASSWORD";>
 						</div>
 						<input type="submit" name="login"style="margin-left: 40px;margin-top: 50px; width: 80%; border-radius: 18px; height: 35px;font-size: 13px;background-color: #27aaf0;color: #bce6f9;padding-top: 6px;text-align: center;" value="LOGIN">
@@ -163,11 +164,11 @@
 					</div> -->
 					<center>
 						<p>
-						<textarea id="person_register" readonly="true" style="width: 47%;height: 21px;cursor: pointer;background-color: #ffffff;color: #000000;float: left;resize: none;text-align: center;border: 2px solid #092554;border-bottom: 2px solid #ffffff;padding-top: 10px;"onclick="change_register_type(this)">PERSON</textarea>
+						<textarea id="person_register" readonly="true" style="width: 47%;height: 21px;cursor: pointer;background-color: #ffffff;color: #000000;float: left;resize: none;text-align: center;border: 1.5px solid #1466a6;border-bottom: 2px solid #ffffff;padding-top: 10px;"onclick="change_register_type(this)">PERSON</textarea>
 						<textarea id="organisation_register" readonly="true" style="width: 47%;height: 21px;cursor: pointer;margin-left: 2px;margin-right: -4px;background-color: #ffffff;color: #092554;float: right;resize: none;text-align: center;padding-top: 10px;border: 2px solid #00000000;" onclick="change_register_type(this)">ORGANISATION</textarea>
 						</p>
 					</center><br>
-					<div id="person_register_form" style="width: 100%;height: 100%;border: 2px solid #092554;margin-top: 16px;overflow: auto;display: block;">
+					<div id="person_register_form" style="width: 100%;height: 100%;border: 1.5px solid #1466a6;margin-top: 16px;overflow: auto;display: block;">
 						<div style="width: 98%; height:100%;border: 1px solid #00000000;">
 							<center>
 							<form style="border: 1px solid #00000000;" name="RegForm" action="welcome.php" method="post">
@@ -226,7 +227,7 @@
 							</center>
 						</div>
 					</div>
-					<div id="organisation_register_form" style="width: 99%;height: 100%;border: 2px solid #092554;margin-top: 16px; overflow: auto;display: none;">
+					<div id="organisation_register_form" style="width: 100.5%;height: 100%;border: 1.5px solid #1466a6;margin-top: 16px; overflow: auto;display: none;">
 						
 						<center>
 						<form name="OrgRegForm" style="border: 1px solid #00000000;" action="welcome_organisation.php" method="post" onsubmit="return form_Validate()">

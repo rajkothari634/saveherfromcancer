@@ -3,6 +3,33 @@
 <head>
 	<title></title>
 	<script type="text/javascript">
+		window.onload = function(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					if(this.responseText == "!@#$#@!$%^*&%()$*%&^#@*"){
+						document.getElementById('log_in_button').style.display = "block";
+						document.getElementById('log_out_button').style.display = "none";
+					}else{
+						document.getElementById('log_in_button').style.display = "none";
+						document.getElementById('log_out_button').style.display = "block";
+					}
+				}
+			};
+			xmlhttp.open("GET", "session.php?q=" + "checksession", true);
+        xmlhttp.send();
+		};
+		function log_out(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById('log_in_button').style.display = "block";
+						document.getElementById('log_out_button').style.display = "none";
+				}
+			};
+			xmlhttp.open("GET", "session.php?q=" + "logout", true);
+        xmlhttp.send();
+		}
 		function navbar_forward(id){
 			
 			switch(id){
@@ -101,7 +128,7 @@
 	start -->
 	<div id="top_sticky_div" style="position: sticky;top: 0;">
 		<center>
-			<div id="top_sticky_contactdetails_div" style="height: 100px;border-bottom: 1px solid #c1c1c1;background-color: #ffffff;" width="100%">
+			<div id="top_sticky_contactdetails_div" style="height: 150px;border-bottom: 1px solid #c1c1c1;background-color: #ffffff;" width="100%">
 				<form id="form_phone_number">
 					<fieldset style="height: 20px;width: 170px;float: left;margin-top: 15px;border: 1px solid black;border-radius: 8px;margin-left: 150px;padding-bottom: 24px;">
 						<legend style="font-style: bold;text-align: center;font-size: 15px;color: #163e6f;font-family:Arial;">
@@ -112,13 +139,14 @@
 						</center>
 					</fieldset>
 				</form>
-				<img id="company_logo" src="about_us1.jpg" style="height: 80px;width: 80px;margin-right: 50px;margin-top: 10px;">
+				<img id="company_logo" src="about_us1.jpg" style="height: 120px;width: 120px;margin-right: 50px;margin-top: 10px;">
 		
 				<div class="top_donate_button" id="donate_button">
 					<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 				</div>
 				<div id="top_log_in" style="width: 60px;height: 20px;float: right;margin-top: 35px;margin-right: 20px;">
-					<center style="color: solid black;font-size: 15px"><a href="login_page.html"  id="log_in_button" style="color: #595959;"> Log in </a></center>
+					<center style="color: solid black;font-size: 15px"><a href="login_page.html"  id="log_in_button" style="color: #595959;"> Log in </a>
+						<a href="" id="log_out_button" style="color: #595959;display: none;" onclick="log_out()">Log Out</a></center>
 				</div>
 			</div>
 		</center>

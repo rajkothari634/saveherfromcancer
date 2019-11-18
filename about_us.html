@@ -4,6 +4,10 @@
 	<title>About Us</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
+		function gotohome(){
+			var url = 'activity_main.html';
+			document.location.href = url;
+		}
 		function state(){
 			var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -50,6 +54,14 @@
 		height: 42px;
 		color: white;
 	}
+	.home_element{
+			position: absolute;
+		 	z-index: 5px;
+		 	top: 545px;
+		 	cursor: pointer;
+		 	right: 60px;
+		 	background-color: #ffffff;
+		}
 	.search_office{
 		position: absolute;
 		top: 200px;
@@ -81,56 +93,58 @@
 			<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 		</div><p style="font-size: 50px;position: absolute;margin-top: 40px;margin-left: 30px;color: #ffffff">SAVE HER FROM CANCER</p>
 		<p style="font-size: 19px;width: 60%;color: #ffffff;position: absolute;margin-left: 40px;margin-top: 110px;">With 'Save Her From Cancer', we're on a mission to free the world, specially women from cancer. Until we do, we'll be funding and conducting research, sharing expert information, supporting patients, and spreading the word about prevention. All so you can live longer — and better.</p>
+		<img class="home_element" src="homeicon.png" style="width: 50px;height: 50px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding: 5px;" onclick="gotohome()">
 		<div class="search_office">
 			<select id="state" style="width: 77%;padding-top: 3px;height: 20px;resize: none;border: 1px solid #c1c1c1;margin-top: 20px;margin-left: 20px;font-size: 13px;float: left;" name="State" placeholder="Search your State">
-			<option > SELECT STATE </option>	
-			<option value="Andhra Pradesh" id="textboxid">Andhra Pradesh </option>
-			<option value="Arunachal Pradesh">Arunachal Pradesh </option>
-			<option value="Assam"> Assam </option>
-			<option value="Bihar"> Bihar </option>
-			<option value="Chhsttisgarh"> Chhattisgarh </option>
-			<option value="Goa"> Goa </option>
-			<option value="Gujarat"> Gujarat </option>
-			<option value="Haryana"> Haryana </option>
-			<option value="Himachal Pradesh"> Himachal Pradesh </option>
-			<option value="Jammu and Kashmir "> Jammu and Kashmir </option>
-			<option value="Jharkhand"> Jharkhand </option>
-			<option value="Karnataka"> Karnataka </option>
-			<option value="Kerala"> Kerala </option>
-			<option value="Madhya Pradesh"> Madhya Pradesh </option>
-			<option value="Maharashtra">Maharashtra</option>
-			<option value="Manipur"> Manipur </option>
-			<option value="Meghalaya"> Meghalaya </option> 
-			<option value="Mizoram"> Mizoram </option>
-			<option value="Nagaland"> Nagaland </option>
-			<option value="Orissa"> Orissa </option>
-			<option value="Punjab"> Punjab </option>
-			<option value="Rajasthan"> Rajasthan </option>
-			<option value="Sikkim"> Sikkim </option>
-			<option value="Tamil Nadu"> Tamil Nadu </option>
-			<option value="Telangana"> Telangana </option>
-			<option value="Tripura"> Tripura </option>
-			<option value="Uttranchal"> Uttranchal </option>
-			<option value="Uttar Pradesh"> Uttar Pradesh </option>
-			<option value="West Bengal"> West Bengal </option>
+				<option > SELECT STATE </option>	
+				<option value="Andhra Pradesh" id="textboxid">Andhra Pradesh </option>
+				<option value="Arunachal Pradesh">Arunachal Pradesh </option>
+				<option value="Assam"> Assam </option>
+				<option value="Bihar"> Bihar </option>
+				<option value="Chhsttisgarh"> Chhattisgarh </option>
+				<option value="Goa"> Goa </option>
+				<option value="Gujarat"> Gujarat </option>
+				<option value="Haryana"> Haryana </option>
+				<option value="Himachal Pradesh"> Himachal Pradesh </option>
+				<option value="Jammu and Kashmir "> Jammu and Kashmir </option>
+				<option value="Jharkhand"> Jharkhand </option>
+				<option value="Karnataka"> Karnataka </option>
+				<option value="Kerala"> Kerala </option>
+				<option value="Madhya Pradesh"> Madhya Pradesh </option>
+				<option value="Maharashtra">Maharashtra</option>
+				<option value="Manipur"> Manipur </option>
+				<option value="Meghalaya"> Meghalaya </option> 
+				<option value="Mizoram"> Mizoram </option>
+				<option value="Nagaland"> Nagaland </option>
+				<option value="Orissa"> Orissa </option>
+				<option value="Punjab"> Punjab </option>
+				<option value="Rajasthan"> Rajasthan </option>
+				<option value="Sikkim"> Sikkim </option>
+				<option value="Tamil Nadu"> Tamil Nadu </option>
+				<option value="Telangana"> Telangana </option>
+				<option value="Tripura"> Tripura </option>
+				<option value="Uttranchal"> Uttranchal </option>
+				<option value="Uttar Pradesh"> Uttar Pradesh </option>
+				<option value="West Bengal"> West Bengal </option>
 			</select>
 			<div style="width: 26px;height: 26px;background-color: #cd1e41;float: right;margin-top: 20px;margin-right: 20px;cursor: pointer;" onclick="state()">
 				<img src="searchiconinalltype.jpg" style="width: 18px;height: 18px;margin-top: 4px;margin-left: 4px;">
 			</div>
 			<br>
 			<center>
-			<div id="info" style="width: 90%;height: 100px;margin-top: 50px;">
-				<p style="float: left;margin-top: 10px;font-size: 15px;font-style: bold;">ORGANISATION NAME</p>
-				<p style="float: left;font-size: 12px;width: 100%;text-align: left;color: #a0a0a0;margin-top: -8px;">ADDRESS of head office of the organisationASFU</p>
+				<div id="info" style="width: 90%;height: 100px;margin-top: 50px;">
+					<p style="float: left;margin-top: 10px;font-size: 15px;font-style: bold;">ORGANISATION NAME</p>
+					<p style="float: left;font-size: 12px;width: 100%;text-align: left;color: #a0a0a0;margin-top: -8px;">ADDRESS of head office of the organisationASFU</p>
 
-				<textarea class="area" id="organisationid" readonly="true">121212121212</textarea><br>
-				<textarea class="area" id="emailid" readonly="true">rajkothari634634634@gmail.com</textarea><br>
-				<textarea class="area" id="link" readonly="true">123123123123123</textarea>
-				<br><br><br><br><br><br>
-				<a href="http://something something . . . . . . . . " style="float: left;font-size: 12px;width: 60%;text-align: left;margin-top: -10px;">fnjdsnfjdsn f sjnf jsn fsfn </a>
-			</div>
-		</center>
+					<textarea class="area" id="organisationid" readonly="true">121212121212</textarea><br>
+					<textarea class="area" id="emailid" readonly="true">rajkothari634634634@gmail.com</textarea><br>
+					<textarea class="area" id="link" readonly="true">123123123123123</textarea>
+					<br><br><br><br><br><br>
+					<a href="http://something something . . . . . . . . " style="float: left;font-size: 12px;width: 60%;text-align: left;margin-top: -10px;">fnjdsnfjdsn f sjnf jsn fsfn </a>
+				</div>
+			</center>
 		</div>
+		
 	</div>
 </body>
 </html>

@@ -31,33 +31,34 @@
         xmlhttp.send();
 		}
 		function navbar_forward(id){
-			
+			var url;
 			switch(id){
 				case cancer_a_to_z:
-				location.replace("cancer_a_z.html");
+				url = 'cancer_a_z.html';
 				break;
 				case donation_list:
-				location.replace("donation_information.html");
+				url = 'donation_information.html';
 				break;
 				case organisations:
-				location.replace("organisation_list.html");
+				url = 'organisation_list.html';
 				break;
 				case about_us:
-				location.replace("about_us.html");
+				url = 'about_us.html';
 				break;
 				case div_cancer_a_to_z:
-				location.replace("cancer_a_z.html");
+				url = 'cancer_a_z.html';
 				break;
 				case div_donation_list:
-				location.replace("donation_information.html");
+				url = 'donation_information.html';
 				break;
 				case div_organisations:
-				location.replace("organisation_list.html");
+				url = 'organisation_list.html';
 				break;
 				case div_about_us:
-				location.replace("about_us.html");
+				url = 'about_us.html';
 				break;
 			}
+			document.location.href = url;
 		}
 	</script>
 	<style type="text/css">

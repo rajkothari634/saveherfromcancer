@@ -3,8 +3,12 @@
 <head>
 	<title>Cancer A-Z</title>
 	<script type="text/javascript">
-		var url;
+		function gotohome(){
+			var url = 'activity_main.html';
+			document.location.href = url;
+		}
 		function cancer_info(id){
+			var url;
 			switch(id){
 				case Breast_Cancer:
 				localStorage.setItem("cancer","Breast Cancer");
@@ -70,6 +74,14 @@
 		 left: 48%;
 		 background-color: #ffffff;
 	}
+	.home_element{
+		 position: absolute;
+		 z-index: 5px;
+		 top: 20px;
+		 left: 60px;
+		 cursor: pointer;
+		 background-color: #ffffff;
+	}
 	.cancer_type{
 		width: 31%;
 		height: 250px;
@@ -105,6 +117,7 @@
 			<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 		</div>
 			<img class="center_element" src="cancer_type_icon.jpg" style="width: 75px;height: 75px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img class="home_element" src="homeicon.png" style="width: 50px;height: 50px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding: 5px;" onclick="gotohome()">
 	</div>
 	<br><br><br><br><br><br>
 	<center style="margin-top: 512px;">

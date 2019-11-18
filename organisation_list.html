@@ -4,6 +4,10 @@
 	<title>Organisation List</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
+		function gotohome(){
+			var url = 'activity_main.html';
+			document.location.href = url;
+		}
 		window.onload = function(){
 		var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -57,6 +61,14 @@
 			 left: 48%;
 			 background-color: #ffffff;
 		}
+		.home_element{
+			position: absolute;
+		 	z-index: 5px;
+		 	top: 395px;
+		 	cursor: pointer;
+		 	right: 60px;
+		 	background-color: #ffffff;
+		}
 		.detailtextarea{
 			float: left;
 			margin-left: 10px; 
@@ -78,6 +90,7 @@
 			<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;">DONATE</p></center>
 		</div>
 			<img class="center_element" src="organisation_icon.png" style="width: 75px;height: 75px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img class="home_element" src="homeicon.png" style="width: 50px;height: 50px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding: 5px;" onclick="gotohome()">
 	</div>
 	<br><br><br><br><br><br>
 	<center style="margin-top: 412px;">

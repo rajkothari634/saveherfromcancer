@@ -3,6 +3,10 @@
 	<title>Cancer All Type</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
+		function gotohome(){
+			var url = 'activity_main.html';
+			document.location.href = url;
+		}
 		var a=0;
 		var prev_selected_alphabetId = "A";
 		var curr_selected_alphabetId = "A";
@@ -93,9 +97,10 @@
 	<div class="top_donate_button" style="float: right;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #cd1e41;width: 190px;height: 42px;margin-bottom: 100px;margin-top: 25px;margin-right: 20px;color: white;">
 		<center style="font-family: bold;font-size: 20px; margin-top: 10px;"><p style="color: white;margin-top: -1px;cursor: pointer;">DONATE</p></center>
 	</div>
-	<center><img class="center_element" src="cancer_type_icon.jpg" style="width: 75px;height: 75px;margin-left: 180px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 10px;">
+	<center><img class="center_element" src="cancer_type_icon.jpg" style="width: 75px;height: 75px;margin-left: 80px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 10px;">
+		<img class="home_element" src="homeicon.png" style="width: 50px;height: 50px;margin-left: 60px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 10px;cursor: pointer;float: left;padding: 5px;" onclick="gotohome()">
 	<br>
-	<p class="u" id="cancer_heading" style="margin-left: 180px;font-size: 40px;">Cancer Name</p>
+	<p class="u" id="cancer_heading" style="margin-left: 180px;font-size: 40px;">All Cancer Name</p>
 	<p class="u" id="heading_below" style="font-size: 25px;width: 60%;margin-top: -15px;">Choose a cancer type from the list below to get detailed information. If you don't see your type listed, it might be covered under a different name. In case of any difficulty,please contact us for further help.</p>
 	<br>
 	<textarea class="alphabet" id="A" onclick="select_alphabet('A')"  readonly="true">A</textarea>

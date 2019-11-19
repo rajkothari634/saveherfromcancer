@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Cancer detail</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		function gotohome(){
 			var url = 'activity_main.html';
@@ -10,6 +11,40 @@
 		window.onload = function(){
 		var cancer = localStorage.getItem("cancer");
 		document.getElementById("cancer_heading").innerHTML = cancer;
+		var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+           var details = this.responseText.split('~');
+
+$(document).ready(function(){
+	$("#general_saying").append(details[0]);
+	$("#about_cancer_type").append(details[1]);
+	$("#cancer_risk_prevention").append(details[2]);
+	$("#cancer_detection").append(details[3]);
+	$("#understanding_cancer").append(details[4]);
+	$("#cancer_treating").append(details[5]);
+});
+  
+    
+
+
+           // document.write(details[0] +"<br>");
+           // document.write(details[1]+"<br>");
+           // document.write(details[2]+"<br>");
+           // document.write(details[3]+"<br>");
+           // document.write(details[4]+"<br>");
+           // document.write(details[5]+"<br>");
+
+   //          document.getElementById("general_saying").innerHTML = details[0];
+   //          document.getElementById("about_cancer_type").innerHTML = details[1];
+			// document.getElementById("cancer_risk_prevention").innerHTML = details[2];	
+			// document.getElementById("cancer_detection").innerHTML = details[3];
+			// document.getElementById("understanding_cancer").innerHTML = details[4];
+			// document.getElementById("cancer_treating").innerHTML = details[5];		
+		}
+        };
+        xmlhttp.open("GET", "getcancerdetail.php?q=" + cancer, true);
+        xmlhttp.send();
 	}
 	</script>
 	<style type="text/css">
@@ -54,36 +89,36 @@
 		<img class="home_element" src="homeicon.png" style="width: 50px;height: 50px;margin-left: 60px;border-radius: 75px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 10px;cursor: pointer;float: left;padding: 5px;" onclick="gotohome()">
 	<br>
 	<p id="cancer_heading" style="margin-left: 180px;font-size: 40px;">Cancer Name</p>
-	<p id="heading_below" style="font-size: 25px;width: 60%;margin-top: -15px;">Whether you or a loved one are worried about developing breast cancer, have just been diagnosed, are going through breast cancer treatment, or are trying to stay well after treatment, this detailed information can help you find the answers you need.</p>
+	<p id="heading_below" id="general_saying" style="font-size: 25px;width: 60%;margin-top: -15px;">Whether you or a loved one are worried about developing breast cancer, have just been diagnosed, are going through breast cancer treatment, or are trying to stay well after treatment, this detailed information can help you find the answers you need.</p>
 	<div style="width: 80%;">
 		<p class="div_info_head">About Cancer type :: </p>
 		<br><br>
-		<p class="info_div" >Breast cancer is a type of cancer that starts in the breast. Cancer starts when cells begin to grow out of control.Breast cancer occurs almost entirely in women, but men can get breast cancer, too.Breast cancer cells usually form a tumor that can often be seen on an x-ray or felt as a lump.</p>	
+		<p class="info_div" id="about_cancer_type" >Breast cancer is a type of cancer that starts in the breast. Cancer starts when cells begin to grow out of control.Breast cancer occurs almost entirely in women, but men can get breast cancer, too.Breast cancer cells usually form a tumor that can often be seen on an x-ray or felt as a lump.</p>	
 
 	<br><br>
 	
 		<p  class="div_info_head">Cancer type Risk and Prevention :: </p>
 		
 		
-		<p  class="info_div" >There are several Lifestyle-related Breast Cancer Risk Factors as - drinking alcohol, being overweight or obese, not being physically active, birth control etc. For its prevention ,we may go through the facts as -Genetic Counseling and Testing for Breast Cancer Risk, Deciding Whether to Use Medicine to Reduce Breast Cancer Risk, Preventive Surgery to Reduce Breast Cancer Risk etc.</p>	
+		<p  class="info_div" id="cancer_risk_prevention" >There are several Lifestyle-related Breast Cancer Risk Factors as - drinking alcohol, being overweight or obese, not being physically active, birth control etc. For its prevention ,we may go through the facts as -Genetic Counseling and Testing for Breast Cancer Risk, Deciding Whether to Use Medicine to Reduce Breast Cancer Risk, Preventive Surgery to Reduce Breast Cancer Risk etc.</p>	
 	
 	<br><br>
 	
 		<p  class="div_info_head">Cancer type Early Detection and Diagnosis :: </p>
 		
-		<p class="info_div" >Breast cancer is sometimes found after symptoms appear, but many women with breast cancer have no symptoms. This is why regular breast cancer screening is so important. Different tests can be used to look for and diagnose breast cancer. If your doctor finds an area of concern on a screening test (a mammogram), or if you have symptoms that could mean breast cancer, you will need more tests to know for sure if it’s cancer</p>	
+		<p class="info_div" id="cancer_detection" >Breast cancer is sometimes found after symptoms appear, but many women with breast cancer have no symptoms. This is why regular breast cancer screening is so important. Different tests can be used to look for and diagnose breast cancer. If your doctor finds an area of concern on a screening test (a mammogram), or if you have symptoms that could mean breast cancer, you will need more tests to know for sure if it’s cancer</p>	
 		
 	<br><br>
 			<p class="div_info_head">Understanding a Cancer type Diagnosis :: </p>
 			
-		<p class="info_div" >There are several types of breast cancer. The type of breast cancer you have depends on where in the breast it started and other factors. If you have been diagnosed with breast cancer, tests will be done to find out the extent (stage) of the cancer. The stage of a cancer helps determine how serious the cancer is and how best to treat it.</p>
+		<p class="info_div" id="understanding_cancer">There are several types of breast cancer. The type of breast cancer you have depends on where in the breast it started and other factors. If you have been diagnosed with breast cancer, tests will be done to find out the extent (stage) of the cancer. The stage of a cancer helps determine how serious the cancer is and how best to treat it.</p>
 			
 	<br><br>
 
 		<p class="div_info_head">Treating Cancer type :: </p>
 	
 		<br><br>
-		<p class="info_div">Some treatments are local, meaning they treat the tumor without affecting the rest of the body. Most women with breast cancer will have some type of surgery to remove the tumor. Depending on the type of breast cancer and how advanced it is, you might need other types of treatment as well, either before or after surgery, or sometimes both.</p>	
+		<p class="info_div" id="cancer_treating" >Some treatments are local, meaning they treat the tumor without affecting the rest of the body. Most women with breast cancer will have some type of surgery to remove the tumor. Depending on the type of breast cancer and how advanced it is, you might need other types of treatment as well, either before or after surgery, or sometimes both.</p>	
 	</div>
 	</center>
 </body>
